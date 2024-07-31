@@ -2,7 +2,9 @@
 
 ## Description
 
-Visit this site at https://gcbel.github.io/personal-website/.
+Visit this site [here](https://gabriellebelanger.netlify.app/).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bf57b106-3e64-4f00-847a-748edc0911a9/deploy-status)](https://app.netlify.com/sites/gabriellebelanger/deploys)
 
 ## Installation
 
