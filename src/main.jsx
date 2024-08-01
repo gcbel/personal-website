@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; // Set up application routing behavior
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./styles/reset.css";
 
 import App from "./App";
 import About from "./pages/About";

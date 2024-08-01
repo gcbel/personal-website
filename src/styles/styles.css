@@ -1,0 +1,37 @@
+/* GLOBAL */
+:root {
+  --text-color: #000000;
+  --background-color: #ffffff;
+}
+
+/* FONTS */
+.cormorant {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mulish {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* EFFECTS */
+.hidden {
+  display: none;
+}
+
+.white-text {
+  color: var(--background-color) !important;
+}
+
+/* COMMON ELEMENTS */
+.page {
+  margin: 140px 18vw 80px 18vw;
+}
+
+#title {
+  font-size: calc(2.5vw + 30px);
+}

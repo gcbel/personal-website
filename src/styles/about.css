@@ -1,0 +1,10 @@
+#prof-pic {
+  width: 30vw;
+  height: auto;
+  border-radius: 15px 15px;
+}
+
+#about-page-top {
+  display: flex;
+  display: row;
+}
