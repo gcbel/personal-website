@@ -152,8 +152,8 @@ const DNA = () => {
 
     // Handle animation for mouse rolling over molecules
     const handleMouseMove = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 10 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 0.01 + 1;
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
     /* EVENT LISTENERS */
@@ -165,21 +165,29 @@ const DNA = () => {
       requestAnimationFrame(animate);
 
       // Rotate the DNA
-      groupRef.current.rotation.y += 0.01;
+      groupRef.current.rotation.y += 0.002;
 
       // Update the raycaster
       raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(groupRef.current.children);
-      groupRef.current.children.forEach((cube) => {
-        if (intersects.find((intersect) => intersect.object === cube)) {
-          cube.position.x += (Math.random() - 0.5) * 0.2;
-          cube.position.y += (Math.random() - 0.5) * 0.2;
-          cube.position.z += (Math.random() - 0.5) * 0.2;
-        } else {
-          // Move cubes back to their original positions
-          cube.position.lerp(cube.userData.originalPosition, 0.1);
-        }
-      });
+      // const intersects = raycaster.intersectObjects(groupRef.current.children);
+      // const intersectedObjects = new Set(
+      //   intersects.map((intersect) => intersect.object)
+      // );
+
+      // groupRef.current.children.forEach((object) => {
+      //   if (intersectedObjects.has(object)) {
+      //     // Scatter the object if it is intersected
+      //     object.position.x += (Math.random() - 0.5) * 4;
+      //     object.position.y += (Math.random() - 0.5) * 4;
+      //     object.position.z += (Math.random() - 0.5) * 4;
+
+      //     // Change color to indicate interaction
+      //     object.material.color.set(0xff0000);
+      //   } else {
+      //     // Smoothly move the object back to its original position
+      //     object.position.lerp(object.userData.originalPosition, 0.05); // Adjust the factor for slower return
+      //   }
+      // });
 
       renderer.render(scene, camera);
     };
