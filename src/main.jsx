@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import ReactDOM from "react-dom/client";
+import { AnimatePresence } from "framer-motion";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/reset.css";
 
@@ -40,5 +41,7 @@ const router = createBrowserRouter([
 
 /* Render components */
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AnimatePresence mode="wait">
+    <RouterProvider router={router} />
+  </AnimatePresence>
 );

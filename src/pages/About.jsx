@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 import "../styles/about.css";
 import profilePicture from "../assets/profile-picture.jpeg";
+import { motion } from "framer-motion";
 
 /* EXPORT */
 /* Renders about page */
@@ -9,11 +10,14 @@ export default function About() {
     <div id="about-page">
       <div className="top-page">
         <div className="page-inner" id="about-page-top">
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.75 }}
             src={profilePicture}
             alt="Gabrielle Belanger"
             id="prof-pic"
-          ></img>
+          ></motion.img>
           <div id="intro-text">
             <h1 className="cormorant" id="main-title">
               Hi! I'm Gabby
@@ -22,9 +26,15 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div id="about-page-bottom">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="page"
+      >
+        <div className="page-inner" id="about-page-bottom"></div>
         <p>I've always liked computers</p>
-      </div>
+      </motion.div>
     </div>
   );
 }
