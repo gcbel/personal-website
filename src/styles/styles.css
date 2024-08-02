@@ -1,7 +1,11 @@
 /* GLOBAL */
 :root {
   --text-color: #000000;
-  --background-color: #ffffff;
+  --background-color: #eeeeee;
+}
+
+html {
+  background-color: var(--background-color);
 }
 
 /* FONTS */
@@ -23,15 +27,49 @@
   display: none;
 }
 
-.white-text {
-  color: var(--background-color) !important;
+.hidden-with-space {
+  visibility: hidden;
 }
 
 /* COMMON ELEMENTS */
 .page {
-  margin: 140px 18vw 80px 18vw;
+  height: 100vh;
+  width: 100vw;
 }
 
-#title {
+.top-page {
+  height: calc(
+    100vh - 140px
+  ); /* Remove nav from calculation of width of top page */
+  width: 100vw;
+}
+
+.page-inner {
+  margin: 140px 6vw 80px 6vw;
+  height: calc(100% - 220px);
+}
+
+.title {
   font-size: calc(2.5vw + 30px);
+}
+
+/* TABLETS */
+@media (min-width: 490px) {
+  .page-inner {
+    margin: 140px 8vw 80px 8vw;
+  }
+}
+
+/* MEDIUM SCREENS */
+@media (min-width: 770px) {
+  .page-inner {
+    margin: 140px 12vw 80px 12vw;
+  }
+}
+
+/* DESKTOPS */
+@media (min-width: 1024px) {
+  .page-inner {
+    margin: 140px 18vw 80px 18vw;
+  }
 }

@@ -1,10 +1,45 @@
+/* TOP PAGE */
+#about-page-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #prof-pic {
-  width: 30vw;
+  width: calc(40vw + 50px);
   height: auto;
   border-radius: 15px 15px;
 }
 
-#about-page-top {
-  display: flex;
-  display: row;
+#intro-text {
+  padding: 15px 5px 0px 5px;
+  min-width: 230px;
+  text-align: center;
+}
+
+#main-title {
+  font-size: calc(2.8vw + 30px);
+}
+
+/* WRAP BREAKPOINT */
+@media (min-width: 455px) {
+  #about-page-top {
+    flex-direction: row;
+  }
+
+  #prof-pic {
+    width: calc(20vw + 50px);
+  }
+
+  #intro-text {
+    padding: 0px 5px 0px 20px;
+  }
+}
+
+/* WRAP BREAKPOINT */
+@media (min-width: 1024px) {
+  #intro-text {
+    padding: 0px 35px 0px 40px;
+  }
 }

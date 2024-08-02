@@ -16,19 +16,19 @@ export default function Nav() {
           <Link to="/"> About</Link>
         </div>
         <div>
-          <i className="white-text" id="projects-arrow">
+          <i className="hidden-with-space" id="projects-arrow">
             &#x2192;{" "}
           </i>
           <Link to="/projects"> Projects</Link>
         </div>
         <div>
-          <i className="white-text" id="resume-arrow">
+          <i className="hidden-with-space" id="resume-arrow">
             &#x2192;{" "}
           </i>
           <Link to="/resume"> Resume</Link>
         </div>
         <div>
-          <i className="white-text" id="contact-arrow">
+          <i className="hidden-with-space" id="contact-arrow">
             &#x2192;{" "}
           </i>
           <Link to="/contact"> Contact</Link>
