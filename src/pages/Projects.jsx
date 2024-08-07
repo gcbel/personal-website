@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
-import projectVideo from "../assets/portfolio.mp4";
+import { useRef, useEffect, useState } from "react";
+import Video from "../components/Video";
 
 // style={{
 //   cursor: "auto",
@@ -17,14 +18,7 @@ export default function Projects() {
   return (
     <div className="top-page">
       <div className="page-inner">
-        <video
-          src={projectVideo}
-          loop
-          preload="metadata"
-          playsInline
-          muted // Add this attribute if you want the video to start muted
-          autoPlay // Add this attribute if you want the video to start automatically
-        ></video>
+        <Video />
       </div>
     </div>
   );

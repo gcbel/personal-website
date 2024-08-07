@@ -32,8 +32,16 @@ export default function About() {
         transition={{ duration: 0.5 }}
         className="page"
       >
-        <div className="page-inner" id="about-page-bottom"></div>
-        <p>I've always liked computers</p>
+        <div className="page-inner" id="about-page-bottom">
+          <h2 className="title cormorant">About me</h2>
+          <p>
+            <i className="fa-solid fa-location-dot"></i>San Francisco
+          </p>
+          <p>
+            I'm a software engineer with a background in biology, chemistry, and
+            healthcare.
+          </p>
+        </div>
       </motion.div>
     </div>
   );
