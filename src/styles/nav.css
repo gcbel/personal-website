@@ -5,6 +5,8 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 100vw;
+  min-width: 300px;
+  background-color: var(--background-color);
 }
 
 #home {
@@ -20,7 +22,7 @@ nav {
 #nav-links {
   display: flex;
   flex-direction: column;
-  margin: 30px 35px 30px 10px;
+  margin: 30px 30px 30px 10px;
   min-width: 100px;
 }
 

@@ -1,6 +1,6 @@
 /* DEPENDENCIES */
 import { useRef, useEffect, useState } from "react";
-import Video from "../components/Video";
+// import Video from "../components/Video";
 
 // style={{
 //   cursor: "auto",
@@ -17,9 +17,7 @@ import Video from "../components/Video";
 export default function Projects() {
   return (
     <div className="top-page">
-      <div className="page-inner">
-        <Video />
-      </div>
+      <div className="page-inner">{/* <Video /> */}</div>
     </div>
   );
 }

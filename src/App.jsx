@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 /* FUNCTION */
 function App() {
   return (
-    <div>
+    <div style={{ minWidth: "300px" }}>
       <Nav />
       <Outlet />
       <Footer />

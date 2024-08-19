@@ -35,13 +35,13 @@ html {
 .page {
   height: 100vh;
   width: 100vw;
+  min-width: 300px;
 }
 
 .top-page {
-  height: calc(
-    100vh - 140px
-  ); /* Remove nav from calculation of width of top page */
+  height: calc(100vh - 140px);
   width: 100vw;
+  min-width: 300px;
 }
 
 .page-inner {

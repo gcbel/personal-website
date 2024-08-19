@@ -1,3 +1,9 @@
 export default function Contact() {
-  return <p>Contact info Hi!</p>;
+  return (
+    <div>
+      <div>Email</div>
+      <div>Handshake</div>
+      <div>Linkedin</div>
+    </div>
+  );
 }

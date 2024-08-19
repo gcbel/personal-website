@@ -16,8 +16,9 @@ export default function Nav() {
     <nav>
       <h2 className="cormorant" id="home">
         <Link to="/" onClick={() => handlePageClick("home")}>
-          GB
+          Gabrielle Belanger
         </Link>
+        <p>Software Engineer</p>
       </h2>
       <div className="mulish" id="nav-links">
         <div>
@@ -41,18 +42,6 @@ export default function Nav() {
           <Link to="/projects" onClick={() => handlePageClick("projects")}>
             {" "}
             Projects
-          </Link>
-        </div>
-        <div>
-          <i
-            className={page === "resume" ? "" : "hidden-with-space"}
-            id="resume-arrow"
-          >
-            &#x2192;{" "}
-          </i>
-          <Link to="/resume" onClick={() => handlePageClick("resume")}>
-            {" "}
-            Resume
           </Link>
         </div>
         <div>

@@ -8,7 +8,6 @@ import App from "./App";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
 import NonExistent from "./pages/NonExistent";
 
 /* ROUTER */
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
-      },
-      {
-        path: "resume",
-        element: <Resume />,
       },
     ],
   },

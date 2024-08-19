@@ -10,14 +10,6 @@ export default function About() {
     <div id="about-page">
       <div className="top-page">
         <div className="page-inner" id="about-page-top">
-          <motion.img
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.75 }}
-            src={profilePicture}
-            alt="Gabrielle Belanger"
-            id="prof-pic"
-          ></motion.img>
           <div id="intro-text">
             <h1 className="cormorant" id="main-title">
               Hi! I'm Gabby
@@ -29,7 +21,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.75 }}
         className="page"
       >
         <div className="page-inner" id="about-page-bottom">
