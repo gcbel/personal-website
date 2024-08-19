@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect } from "react";
 import About from "../components/About";
+import Title from "../components/Title";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
@@ -11,12 +12,13 @@ export default function Main() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const height = window.innerHeight * 0.2; // 2vh in pixels
+      const fadeTop = window.innerHeight * 0.2;
+      const fadeBottom = document.documentElement.scrollHeight;
 
-      if (scrollTop < height) {
+      if (scrollTop < fadeTop && scrollTop > fadeBottom) {
         setOpacity(0.9);
       } else {
-        const opacity = 0.9 + (height - scrollTop) * 0.005;
+        const opacity = 0.9 + (fadeTop - scrollTop) * 0.005;
         setOpacity(Math.max(opacity, 0));
       }
     };
@@ -36,6 +38,7 @@ export default function Main() {
         alt="The Bathing Pool by Robert Hubert"
         style={{ opacity: opacity }}
       ></img>
+      <Title />
       <About />
       <Projects />
       <Contact />
