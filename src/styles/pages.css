@@ -43,3 +43,8 @@
     padding: 0px 35px 0px 40px;
   }
 }
+
+/* */
+.title {
+  font-size: calc(2.5vw + 30px);
+}

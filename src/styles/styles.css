@@ -1,7 +1,7 @@
 /* GLOBAL */
 :root {
-  --text-color: #000000;
-  --background-color: #eeeeee;
+  --text-color: #ffffff;
+  --background-color: #1e1e1e;
 }
 
 html {
@@ -38,19 +38,9 @@ html {
   min-width: 300px;
 }
 
-.top-page {
-  height: calc(100vh - 140px);
-  width: 100vw;
-  min-width: 300px;
-}
-
 .page-inner {
   margin: 140px 6vw 80px 6vw;
   height: calc(100% - 220px);
-}
-
-.title {
-  font-size: calc(2.5vw + 30px);
 }
 
 /* TABLETS */
