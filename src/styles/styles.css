@@ -1,7 +1,7 @@
 /* GLOBAL */
 :root {
   --text-color: #ffffff;
-  --background-color: #1e1e1e;
+  --background-color: #131313;
 }
 
 html {
@@ -30,9 +30,8 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  opacity: 100%;
   object-fit: cover;
-  min-width: 250px;
+  min-width: 300px;
 }
 
 /* EFFECTS */

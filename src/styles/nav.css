@@ -2,33 +2,59 @@
 nav {
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: space-between;
   width: 100vw;
   min-width: 300px;
+  transition: backdrop-filter 2s ease, -webkit-backdrop-filter 2s ease;
+}
+
+.nav-blur {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+#left-nav-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 22px 10px 18px 20px;
 }
 
 #home {
-  font-size: calc(1.5vw + 30px);
-  margin: 30px 10px 30px 30px;
-}
-
-#home > * {
+  font-size: calc(1vw + 20px);
   text-decoration: none;
   color: var(--text-color);
 }
 
-#nav-links {
-  display: flex;
-  flex-direction: column;
-  margin: 30px 30px 30px 10px;
-  min-width: 100px;
-}
-
-#nav-links > * > * {
+#title {
   color: var(--text-color);
   font-size: 20px;
+}
+
+#right-nav-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 20px 20px 20px 10px;
+}
+
+#right-nav-content a {
+  color: var(--text-color);
+  font-size: calc(0.2vw + 16px);
   text-decoration: none;
+  margin: 0px 0px 0px 10px;
+  font-weight: 400;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  height: 1px;
+  background: var(--text-color);
+  transform-origin: 50%;
 }
 
 /* ARROWS */
