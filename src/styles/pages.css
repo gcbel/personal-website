@@ -46,9 +46,47 @@
   color: var(--text-color);
 }
 
+#education-and-experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-outer-div {
+  margin: 10px 0px 10px 0px;
+}
+
+.education-top-div,
+.education-bottom-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.education-top-div {
+  font-size: 18px;
+}
+
+.education-bottom-div {
+  font-size: 14px;
+  color: var(--dark-text-color);
+}
+
 /* CONTACT PAGE */
 #contact-page {
   color: var(--text-color);
+}
+
+#location {
+  margin: 10px 0px 10px 20px;
+  font-size: 22px;
+}
+
+#location i {
+  margin-right: 10px;
+}
+
+#blurb {
+  font-size: 24px;
 }
 
 /* LARGE MOBILE */
@@ -59,6 +97,21 @@
 
   #name {
     text-align: left;
+  }
+
+  #education-and-experience {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #education {
+    width: 40vw;
+    margin-right: 15px;
+  }
+
+  #experience {
+    width: 40vw;
+    margin-left: 15px;
   }
 }
 

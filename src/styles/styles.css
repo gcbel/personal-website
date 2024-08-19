@@ -1,6 +1,7 @@
 /* GLOBAL */
 :root {
   --text-color: #ffffff;
+  --dark-text-color: #9d9d9d;
   --background-color: #131313;
 }
 
@@ -52,6 +53,12 @@ html {
 
 .title {
   font-size: calc(3vw + 30px);
+  margin-top: 50px;
+}
+
+.subtitle {
+  font-size: calc(1vw + 20px);
+  margin-top: 30px;
 }
 
 /* TABLETS */
