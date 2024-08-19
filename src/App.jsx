@@ -7,6 +7,11 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div style={{ minWidth: "300px" }}>
+      <img
+        id="background-image"
+        src="../background-img.jpeg"
+        alt="The Bathing Pool by Robert Hubert"
+      ></img>
       <Nav />
       <Outlet />
       <Footer />

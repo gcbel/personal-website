@@ -1,14 +1,14 @@
 /* DEPENDENCIES */
-import "../styles/about.css";
-import profilePicture from "../assets/profile-picture.jpeg";
+import "../styles/pages.css";
+// import profilePicture from "../assets/profile-picture.jpeg";
 import { motion } from "framer-motion";
 
 /* EXPORT */
-/* Renders about page */
+/* About page */
 export default function About() {
   return (
     <div id="about-page">
-      <div className="top-page">
+      <div>
         <div className="page-inner" id="about-page-top">
           <div id="intro-text">
             <h1 className="cormorant" id="main-title">
