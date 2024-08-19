@@ -11,12 +11,13 @@ export default function Main() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const height = window.innerHeight * 0.02; // 2vh in pixels
+      const height = window.innerHeight * 0.2; // 2vh in pixels
 
-      if (scrollTop > height) {
-        setOpacity(0);
+      if (scrollTop < height) {
+        setOpacity(0.9);
       } else {
-        setOpacity(1);
+        const opacity = 0.9 + (height - scrollTop) * 0.005;
+        setOpacity(Math.max(opacity, 0));
       }
     };
 

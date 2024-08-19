@@ -1,50 +1,50 @@
 /* TOP PAGE */
-#about-page-top {
+#title-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#prof-pic {
-  width: calc(40vw + 50px);
-  height: auto;
-  border-radius: 15px 15px;
-}
-
 #intro-text {
-  padding: 15px 5px 0px 5px;
-  min-width: 230px;
+  min-width: 260px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 0px 100px 0px;
 }
 
-#main-title {
-  font-size: calc(2.8vw + 30px);
+#name {
+  color: var(--text-color);
+  font-size: calc(6vw + 38px);
+  text-align: center;
+  font-weight: 500;
+  width: calc(20vw + 160px);
 }
 
-/* WRAP BREAKPOINT */
-@media (min-width: 455px) {
-  #about-page-top {
+#intro {
+  width: 275px;
+  font-size: 24px;
+  color: var(--text-color);
+  margin: 20px 0px 0px 0px;
+}
+
+/* LARGE MOBILE */
+@media (min-width: 750px) {
+  #intro-text {
     flex-direction: row;
   }
 
-  #prof-pic {
-    width: calc(20vw + 50px);
-  }
-
-  #intro-text {
-    padding: 0px 5px 0px 20px;
+  #name {
+    text-align: left;
   }
 }
 
-/* WRAP BREAKPOINT */
+/* DESKTOP */
 @media (min-width: 1024px) {
   #intro-text {
     padding: 0px 35px 0px 40px;
   }
-}
-
-/* */
-.title {
-  font-size: calc(2.5vw + 30px);
 }

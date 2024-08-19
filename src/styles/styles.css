@@ -30,6 +30,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
+  opacity: 0.9;
   object-fit: cover;
   min-width: 300px;
 }
@@ -56,7 +57,7 @@ html {
 }
 
 /* TABLETS */
-@media (min-width: 490px) {
+@media (min-width: 455px) {
   .page-inner {
     margin: 140px 8vw 80px 8vw;
   }
@@ -72,6 +73,6 @@ html {
 /* DESKTOPS */
 @media (min-width: 1024px) {
   .page-inner {
-    margin: 140px 18vw 80px 18vw;
+    margin: 140px 16vw 80px 16vw;
   }
 }
