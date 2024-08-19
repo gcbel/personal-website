@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="page-inner" id="about">
+    <div className="page-inner" id="about-page">
       <h2 className="title cormorant">A little about me</h2>
       <p>
         <i className="fa-solid fa-location-dot"></i>San Francisco

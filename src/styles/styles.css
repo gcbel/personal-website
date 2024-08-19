@@ -46,27 +46,31 @@ html {
 
 /* COMMON ELEMENTS */
 .page-inner {
-  margin: 140px 6vw 80px 6vw;
+  margin: 0px 8vw 0px 8vw;
   height: calc(100% - 220px);
+}
+
+.title {
+  font-size: calc(3vw + 30px);
 }
 
 /* TABLETS */
 @media (min-width: 455px) {
   .page-inner {
-    margin: 140px 8vw 80px 8vw;
+    margin: 0px 11vw 0px 11vw;
   }
 }
 
 /* MEDIUM SCREENS */
 @media (min-width: 770px) {
   .page-inner {
-    margin: 140px 12vw 80px 12vw;
+    margin: 0px 12vw 0px 12vw;
   }
 }
 
 /* DESKTOPS */
 @media (min-width: 1024px) {
   .page-inner {
-    margin: 140px 16vw 80px 16vw;
+    margin: 0px 16vw 0px 16vw;
   }
 }

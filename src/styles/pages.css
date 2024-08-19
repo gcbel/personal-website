@@ -8,6 +8,8 @@
 }
 
 #home-page-content {
+  margin-top: 140px;
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +42,12 @@
 }
 
 /* ABOUT PAGE */
-#about {
+#about-page {
+  color: var(--text-color);
+}
+
+/* CONTACT PAGE */
+#contact-page {
   color: var(--text-color);
 }
 
