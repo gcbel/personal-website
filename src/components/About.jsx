@@ -1,17 +1,29 @@
 export default function About() {
   return (
-    <div className="page-inner" id="about-page">
+    <div className="page-inner-large" id="about-page">
       <h2 className="title cormorant">A little about me</h2>
       <div className="mulish" id="about-page-content">
         <p id="location">
-          <i class="fa fa-map-marker"></i>San Francisco
+          <i className="fa fa-map-marker"></i>San Francisco
         </p>
-        <p id="blurb">
-          I'm a software engineer with a background in biology, chemistry, and
-          healthcare. I'm currently getting my Master's Degree in computer
-          science from Stanford University on the Systems track and recently
-          completed my Bachelors in Biology in June 2024.
-        </p>
+        <div id="blurb-and-photo">
+          <div id="blurb">
+            <p id="blurb1">
+              I'm a software engineer with a background in biology, chemistry,
+              and healthcare.
+            </p>
+            <p>
+              I'm currently getting my Master's Degree in computer science from
+              Stanford University on the Systems track and recently completed my
+              Bachelors in Biology in June 2024.
+            </p>
+          </div>
+          <img
+            src="../../profile-picture.jpeg"
+            alt="Headshot of Gabby"
+            id="profile-picture"
+          ></img>
+        </div>
         <div id="education-and-experience">
           <div id="education">
             <h3 className="subtitle">Education</h3>
@@ -57,7 +69,7 @@ export default function About() {
             <div className="education-outer-div">
               <div className="education-top-div">
                 <p>Research Assistant</p>
-                <p>Stanford LPCH</p>
+                <p>Stanford Hospital</p>
               </div>
             </div>
             <div className="education-outer-div">
@@ -67,6 +79,10 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <div></div>
         </div>
       </div>
     </div>

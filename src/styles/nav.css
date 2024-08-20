@@ -5,6 +5,7 @@ nav {
   width: 100vw;
   min-width: 300px;
   transition: backdrop-filter 2s ease, -webkit-backdrop-filter 2s ease;
+  z-index: 1;
 }
 
 .nav-blur {
@@ -52,7 +53,7 @@ nav {
 
 /* PROGRESS BAR */
 .progress-bar {
-  height: 1px;
+  height: 0.5px;
   background: var(--text-color);
   transform-origin: 50%;
 }

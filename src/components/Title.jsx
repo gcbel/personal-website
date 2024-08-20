@@ -14,7 +14,7 @@ export default function About() {
       if (i < title.length) {
         i++;
         setTitleText((prev) => prev + title.charAt(i));
-        setTimeout(writeTitle, 140);
+        setTimeout(writeTitle, 180);
       }
     }
 

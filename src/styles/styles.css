@@ -2,6 +2,7 @@
 :root {
   --text-color: #ffffff;
   --dark-text-color: #9d9d9d;
+  --clear-text-color: #ffffff97;
   --background-color: #131313;
 }
 
@@ -51,6 +52,11 @@ html {
   height: calc(100% - 220px);
 }
 
+.page-inner-large {
+  margin: 0px 8vw 0px 8vw;
+  height: calc(100% - 220px);
+}
+
 .title {
   font-size: calc(3vw + 30px);
   margin-top: 50px;
@@ -61,9 +67,19 @@ html {
   margin-top: 30px;
 }
 
+.borders {
+  border: 0.5px solid var(--clear-text-color);
+  padding: 8px 15px 8px 15px;
+  border-radius: 20px;
+}
+
 /* TABLETS */
 @media (min-width: 455px) {
   .page-inner {
+    margin: 0px 11vw 0px 11vw;
+  }
+
+  .page-inner-large {
     margin: 0px 11vw 0px 11vw;
   }
 }
@@ -73,11 +89,19 @@ html {
   .page-inner {
     margin: 0px 12vw 0px 12vw;
   }
+
+  .page-inner-large {
+    margin: 0px 9vw 0px 9vw;
+  }
 }
 
 /* DESKTOPS */
 @media (min-width: 1024px) {
   .page-inner {
     margin: 0px 16vw 0px 16vw;
+  }
+
+  .page-inner-large {
+    margin: 0px 7vw 0px 7vw;
   }
 }

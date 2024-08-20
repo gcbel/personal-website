@@ -46,6 +46,36 @@
   color: var(--text-color);
 }
 
+#location {
+  margin: 10px 0px 10px 20px;
+  font-size: 22px;
+}
+
+#location i {
+  margin-right: 10px;
+}
+
+#blurb-and-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#blurb {
+  font-size: 24px;
+}
+
+#blurb1 {
+  margin-bottom: 10px;
+}
+
+#profile-picture {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
 #education-and-experience {
   display: flex;
   flex-direction: column;
@@ -71,26 +101,55 @@
   color: var(--dark-text-color);
 }
 
-/* CONTACT PAGE */
-#contact-page {
+/* PROJECT PAGE */
+#project-page {
   color: var(--text-color);
 }
 
-#location {
-  margin: 10px 0px 10px 20px;
-  font-size: 22px;
+#project-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-#location i {
-  margin-right: 10px;
+/* CONTACT PAGE */
+#contact-page {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
-#blurb {
-  font-size: 24px;
+#contact-title {
+  font-size: calc(4vw + 34px);
+}
+
+#contact {
+  border-top: 0.5px solid var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+#interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#contact-content {
+  margin-top: 20px;
 }
 
 /* LARGE MOBILE */
 @media (min-width: 750px) {
+  /* HOME PAGE */
   #intro-text {
     flex-direction: row;
   }
@@ -99,6 +158,7 @@
     text-align: left;
   }
 
+  /* ABOUT PAGE */
   #education-and-experience {
     flex-direction: row;
     justify-content: space-between;
@@ -113,11 +173,53 @@
     width: 40vw;
     margin-left: 15px;
   }
+
+  #blurb-and-photo {
+    flex-direction: row;
+  }
+
+  /* CONTACT PAGE */
+  #contact-page {
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-end;
+  }
+
+  #contact-title {
+    flex: 1;
+    position: relative;
+    top: 15px;
+  }
+
+  #contact-content {
+    flex: 3;
+    font-size: 22px;
+  }
+
+  #interests {
+    margin-bottom: 10px;
+  }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+  /* HOME PAGE */
   #intro-text {
     padding: 0px 35px 0px 40px;
+  }
+
+  /* ABOUT PAGE */
+  #profile-picture {
+    height: 250px;
+    width: 250px;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    top: -120px;
+  }
+
+  #profile-picture:hover {
+    height: 260px;
+    width: 260px;
+    padding: 5px 5px 5px 5px;
   }
 }
