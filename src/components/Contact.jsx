@@ -12,6 +12,7 @@ export default function Contact() {
           <ul className="borders">Electronic health records</ul>
           <ul className="borders">Stanford</ul>
           <ul className="borders">Vanilla CSS</ul>
+          <ul className="borders">Fullstack</ul>
           <ul className="borders">Frontend</ul>
         </div>
         <div className="mulish" id="contact">
