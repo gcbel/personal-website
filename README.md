@@ -20,4 +20,4 @@ Reset file: https://meyerweb.com/eric/tools/css/reset/
 
 ## License
 
-Please refer to the license in the repo.
+MIT License
