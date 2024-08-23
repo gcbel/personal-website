@@ -2,6 +2,8 @@
 
 ## Description
 
+My personal website, featuring content about me, my background, projects I've worked on, and information on how to contact me.
+
 Visit this site [here](https://gabriellebelanger.netlify.app/).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bf57b106-3e64-4f00-847a-748edc0911a9/deploy-status)](https://app.netlify.com/sites/gabriellebelanger/deploys)
