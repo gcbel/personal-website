@@ -24,8 +24,14 @@ export default function Experience() {
     }
   };
 
-  // window.onload(handleCollapseContent);
-  window.addEventListener("resize", handleCollapseContent);
+  useEffect(() => {
+    handleCollapseContent();
+
+    window.addEventListener("resize", handleCollapseContent);
+    return () => {
+      window.removeEventListener("resize", handleCollapseContent);
+    };
+  }, []);
 
   return (
     <div className="page-inner" id="experience-page">

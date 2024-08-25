@@ -58,10 +58,10 @@ html {
 #background-image {
   z-index: -1;
   position: fixed;
-  top: 0;
+  top: -10vh;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   opacity: 0.9;
   object-fit: cover;
   min-width: 300px;
