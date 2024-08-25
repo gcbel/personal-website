@@ -26,29 +26,28 @@ nav {
 }
 
 #home {
-  font-size: calc(1vw + 20px);
   text-decoration: none;
   color: var(--text-color);
-}
-
-#title {
-  color: var(--text-color);
-  font-size: 20px;
+  margin-top: 0;
 }
 
 #right-nav-content {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  margin: 20px 20px 20px 10px;
+  margin: 20px 20px 18px 10px;
 }
 
 #right-nav-content a {
   color: var(--text-color);
-  font-size: calc(0.2vw + 16px);
   text-decoration: none;
   margin: 0px 0px 0px 10px;
   font-weight: 400;
+}
+
+#home:hover,
+#right-nav-content a:hover {
+  color: var(--dark-text-color);
 }
 
 /* PROGRESS BAR */
@@ -56,10 +55,4 @@ nav {
   height: 0.5px;
   background: var(--text-color);
   transform-origin: 50%;
-}
-
-/* ARROWS */
-#about-arrow,
-#projects-arrow {
-  font-size: 20px;
 }

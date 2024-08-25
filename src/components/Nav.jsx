@@ -1,10 +1,9 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect } from "react";
-import "../styles/nav.css";
 import { motion, useScroll, useSpring } from "framer-motion";
+import "../styles/nav.css";
 
-/* EXPORT */
-/* Renders nav bar */
+/* NAV BAR */
 export default function Nav() {
   // Handle blurring
   const [isBlurred, setIsBlurred] = useState(false);
@@ -42,7 +41,7 @@ export default function Nav() {
     <nav className={`${isBlurred ? "nav-blur" : ""}`}>
       <div id="nav-content">
         <div id="left-nav-content">
-          <h1 to="/" className="cormorant" id="home">
+          <h1 to="/" className="cormorant subtitle" id="home">
             GB
           </h1>
         </div>

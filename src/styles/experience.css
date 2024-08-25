@@ -1,0 +1,85 @@
+/* EXPERIENCE PAGE */
+#experience-page {
+  margin-bottom: 160px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+#education-and-experience {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -400px;
+}
+
+#education-header,
+#experience-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid var(--text-color);
+  padding: 20px 0px 10px 0px;
+}
+
+#education-header p,
+#experience-header p {
+  transform: scale(1.25, 0.6);
+  font-size: 24px;
+}
+
+.education-outer-div {
+  margin: 15px 0px 15px 0px;
+}
+
+.education-top-div,
+.education-bottom-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.education-bottom-div {
+  color: var(--dark-text-color);
+}
+
+.education-left {
+  text-align: left;
+}
+
+.education-right {
+  text-align: right;
+}
+
+#DNA {
+  rotate: 40deg;
+  position: relative;
+  left: calc(-5vw - 120px);
+}
+
+/* LARGE MOBILE */
+@media (min-width: 455px) {
+}
+
+/* TABLET */
+@media (min-width: 750px) {
+  #experience-page {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #education-and-experience {
+    flex: 1;
+    top: 0px;
+  }
+
+  #DNA {
+    rotate: 0deg;
+    left: -10px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+}

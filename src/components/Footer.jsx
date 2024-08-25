@@ -5,7 +5,7 @@ import "../styles/footer.css";
 /* Renders footer */
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mulish">
       <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">
         <i className="fa fa-linkedin"></i>
       </a>

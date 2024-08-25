@@ -1,5 +1,4 @@
 /* DEPENDENCIES */
-import "../styles/pages.css";
 import React, { useState, useEffect } from "react";
 
 /* TITLE PAGE */
@@ -26,16 +25,16 @@ export default function About() {
   }, []);
 
   return (
-    <div id="home-page">
+    <div className="top-page" id="home-page">
       <div className="page-inner" id="home-page-content">
         <div id="intro-text">
-          <h1 className="cormorant" id="name">
+          <h1 className="cormorant large-title" id="name">
             {titleText}
             <span className={`${showCursor ? "" : "hidden-with-space"}`}>
               |
             </span>
           </h1>
-          <p className="mulish" id="intro">
+          <p className="mulish large-text" id="intro">
             I'm a computer science Master's student and software engineer.
           </p>
         </div>

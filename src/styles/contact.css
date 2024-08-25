@@ -1,0 +1,95 @@
+/* CONTACT PAGE */
+#contact-page {
+  display: flex;
+  align-items: flex-end;
+}
+
+#contact-page-inner {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+#contact {
+  border-top: 0.5px solid var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#interests,
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#my-skills {
+  margin-top: 30px;
+}
+
+#contact-content {
+  margin-top: 20px;
+}
+
+/* MESSAGE SECTION */
+#send-message-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#send-message-button {
+  margin: 20px 0px 20px 0px;
+  border-radius: 25px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+#message-modal-background {
+  background-color: var(--clear-background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message-modal {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@media (min-width: 900px) {
+  /* CONTACT PAGE */
+  #contact-page-inner {
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-end;
+  }
+
+  #contact-title {
+    flex: 1;
+    position: relative;
+    top: 15px;
+  }
+
+  #contact-content {
+    flex: 3;
+  }
+
+  #interests,
+  #skills {
+    margin-bottom: 10px;
+  }
+}

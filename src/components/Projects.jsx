@@ -1,7 +1,7 @@
 /* DEPENDENCIES */
 import { useRef, useEffect, useState } from "react";
 
-/* EXPORT */
+/* PROJECT PAGE */
 export default function Projects() {
   return (
     <div className="page-inner" id="project-page">

@@ -1,24 +1,32 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect } from "react";
-import About from "../components/About";
 import Title from "../components/Title";
+import About from "../components/About";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import "../styles/miscPages.css";
 
-/* FUNCTION */
+/* FULL PAGE */
 export default function Main() {
   // Handle background opacity
   const [opacity, setOpacity] = useState(1);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const fadeTop = window.innerHeight * 0.2;
-      const fadeBottom = document.documentElement.scrollHeight;
+      const fadeTop = window.innerHeight * 0.4;
+      const fadeBottom =
+        document.documentElement.scrollHeight - window.innerHeight * 2;
 
-      if (scrollTop < fadeTop && scrollTop > fadeBottom) {
+      if (scrollTop > fadeBottom) {
+        console.log(fadeBottom);
+        console.log(scrollTop);
+        const opacity = 0 + (scrollTop - fadeBottom) * 0.001;
+        setOpacity(Math.min(opacity, 0.4));
+      } else if (scrollTop < fadeTop) {
         setOpacity(0.9);
       } else {
-        const opacity = 0.9 + (fadeTop - scrollTop) * 0.005;
+        const opacity = 0.9 + (fadeTop - scrollTop) * 0.002;
         setOpacity(Math.max(opacity, 0));
       }
     };
@@ -40,6 +48,7 @@ export default function Main() {
       ></img>
       <Title />
       <About />
+      <Experience />
       <Projects />
       <Contact />
     </div>

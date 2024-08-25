@@ -1,9 +1,15 @@
 /* GLOBAL */
 :root {
   --text-color: #ffffff;
-  --dark-text-color: #9d9d9d;
+  --dark-text-color: #8b9b91;
   --clear-text-color: #ffffff97;
   --background-color: #131313;
+  --clear-background-color: #131313c9;
+  --test-color: #81aeaa;
+  --test-color2: #6f8f6c;
+  --test-color3: #80a9b1;
+  --test-color4: #75aa8c;
+  --test-color5: #66709b;
 }
 
 html {
@@ -22,6 +28,30 @@ html {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+/* FONT SIZES */
+.large-title {
+  font-size: calc(6vw + 38px);
+}
+
+.medium-title {
+  font-size: calc(4vw + 34px);
+}
+
+.title {
+  font-size: calc(2vw + 30px);
+  margin-top: 50px;
+}
+
+.subtitle {
+  font-size: calc(1vw + 20px);
+}
+
+.large-text {
+  font-size: 20px;
 }
 
 /* BACKGROUND IMAGE */
@@ -47,24 +77,24 @@ html {
 }
 
 /* COMMON ELEMENTS */
+.top-page {
+  height: 100vh;
+}
+
+.page {
+  min-height: 80vh;
+}
+
+.bottom-page {
+  min-height: 100vh;
+}
+
 .page-inner {
   margin: 0px 8vw 0px 8vw;
-  height: calc(100% - 220px);
 }
 
 .page-inner-large {
   margin: 0px 8vw 0px 8vw;
-  height: calc(100% - 220px);
-}
-
-.title {
-  font-size: calc(3vw + 30px);
-  margin-top: 50px;
-}
-
-.subtitle {
-  font-size: calc(1vw + 20px);
-  margin-top: 30px;
 }
 
 .borders {
@@ -73,7 +103,7 @@ html {
   border-radius: 20px;
 }
 
-/* TABLETS */
+/* LARGE MOBILE */
 @media (min-width: 455px) {
   .page-inner {
     margin: 0px 11vw 0px 11vw;
@@ -82,16 +112,32 @@ html {
   .page-inner-large {
     margin: 0px 11vw 0px 11vw;
   }
+
+  .mulish {
+    font-size: 18px;
+  }
+
+  .large-text {
+    font-size: 20px;
+  }
 }
 
-/* MEDIUM SCREENS */
-@media (min-width: 770px) {
+/* TABLETS */
+@media (min-width: 750px) {
   .page-inner {
-    margin: 0px 12vw 0px 12vw;
+    margin: 0px 9vw 0px 9vw;
   }
 
   .page-inner-large {
     margin: 0px 9vw 0px 9vw;
+  }
+
+  .mulish {
+    font-size: 20px;
+  }
+
+  .large-text {
+    font-size: 22px;
   }
 }
 
@@ -103,5 +149,9 @@ html {
 
   .page-inner-large {
     margin: 0px 7vw 0px 7vw;
+  }
+
+  .large-text {
+    font-size: 24px;
   }
 }
