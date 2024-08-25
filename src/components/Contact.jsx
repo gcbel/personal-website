@@ -57,9 +57,9 @@ export default function Contact() {
           </div>
           <div className="mulish" id="contact">
             <a>Email</a>
-            <a>Handshake</a>
             <a>Linkedin</a>
             <a>Github</a>
+            <a>Handshake</a>
             <a>Medium</a>
           </div>
         </div>

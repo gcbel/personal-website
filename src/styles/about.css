@@ -1,0 +1,90 @@
+/* ABOUT PAGE */
+#about-page {
+  color: var(--text-color);
+}
+
+#location {
+  margin: 10px 0px 10px 20px;
+  font-style: italic;
+}
+
+#location i {
+  margin-right: 10px;
+}
+
+#blurb-and-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 120px;
+}
+
+#blurb > * {
+  margin-bottom: 14px;
+}
+
+#pictures-and-captions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pictures-and-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#pictures-and-buttons button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 0px;
+}
+
+#pictures-and-buttons button:hover {
+  color: var(--dark-text-color);
+}
+
+#profile-picture {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0s ease-in-out;
+}
+
+#profile-picture.fade-in {
+  opacity: 1;
+}
+
+.image-button {
+  font-size: 30px;
+  transform: scale(0.5, 1);
+}
+
+/* TABLET */
+@media (min-width: 750px) {
+  /* ABOUT PAGE */
+  #profile-picture {
+    height: 250px;
+    width: 250px;
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  /* ABOUT PAGE */
+  #blurb-and-photo {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  #blurb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

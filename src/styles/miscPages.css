@@ -38,66 +38,6 @@
   margin: 20px 0px 0px 0px;
 }
 
-/* ABOUT PAGE */
-#about-page {
-  color: var(--text-color);
-}
-
-#location {
-  margin: 10px 0px 10px 20px;
-  font-style: italic;
-}
-
-#location i {
-  margin-right: 10px;
-}
-
-#blurb-and-photo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 120px;
-}
-
-#blurb > * {
-  margin-bottom: 14px;
-}
-
-#pictures-and-captions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#pictures-and-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-#pictures-and-buttons button {
-  background-color: transparent;
-  color: var(--text-color);
-  border: 0px;
-}
-
-#pictures-and-buttons button:hover {
-  color: var(--dark-text-color);
-}
-
-#profile-picture {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.image-button {
-  font-size: 30px;
-  transform: scale(0.5, 1);
-}
-
 /* PROJECT PAGE */
 #project-page {
   color: var(--text-color);
@@ -126,13 +66,6 @@
   #name {
     text-align: left;
   }
-
-  /* ABOUT PAGE */
-  #profile-picture {
-    height: 250px;
-    width: 250px;
-    padding: 10px 10px 10px 10px;
-  }
 }
 
 /* DESKTOP */
@@ -140,17 +73,5 @@
   /* HOME PAGE */
   #intro-text {
     padding: 0px 35px 0px 40px;
-  }
-
-  /* ABOUT PAGE */
-  #blurb-and-photo {
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  #blurb {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 }

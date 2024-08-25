@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import { useRef, useEffect, useState } from "react";
+import "../styles/about.css";
 
 /* ABOUT PAGE */
 export default function About() {
@@ -19,11 +20,29 @@ export default function About() {
     "let curActivity = baking;",
   ];
 
+  const alt = [
+    "Headshot of Gabby",
+    "Gabby and a bunny",
+    "Bunny on a computer",
+    "The Grand Tetons",
+    "Cinnamon Rolls",
+  ];
+
   /* Handle photo in profile section */
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [fade, setFade] = useState(false);
+
   const switchPhoto = (change) => {
-    setPhotoIndex((photoIndex + change + photos.length) % photos.length);
+    setFade(false);
+    setTimeout(() => {
+      setPhotoIndex((photoIndex + change + photos.length) % photos.length);
+      setFade(true);
+    }, 0);
   };
+
+  useEffect(() => {
+    setFade(true); // Fade in the first image on component mount
+  }, []);
 
   return (
     <div className="page page-inner-large" id="about-page">
@@ -58,8 +77,9 @@ export default function About() {
             </button>
             <img
               src={`../../${photos[photoIndex]}`}
-              alt="Headshot of Gabby"
+              alt={`${alt[photoIndex]}`}
               id="profile-picture"
+              className={fade ? "fade-in" : ""}
             ></img>
             <button
               onClick={() => switchPhoto(1)}
