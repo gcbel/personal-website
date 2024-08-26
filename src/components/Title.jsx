@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect } from "react";
+import "../styles/title.css";
 
 /* TITLE PAGE */
 export default function About() {

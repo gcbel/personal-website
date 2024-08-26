@@ -38,17 +38,6 @@
   margin: 20px 0px 0px 0px;
 }
 
-/* PROJECT PAGE */
-#project-page {
-  color: var(--text-color);
-}
-
-#project-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
 /* LARGE MOBILE */
 @media (min-width: 455px) {
   #pictures-and-buttons {

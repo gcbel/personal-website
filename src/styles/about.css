@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 120px;
 }
 
 #blurb > * {
@@ -62,6 +61,21 @@
 .image-button {
   font-size: 30px;
   transform: scale(0.5, 1);
+}
+
+#about-me-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 120px;
+}
+
+#baby-picture {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 /* TABLET */

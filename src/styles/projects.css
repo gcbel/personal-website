@@ -1,0 +1,83 @@
+/* PROJECT PAGE */
+#project-page {
+  color: var(--text-color);
+}
+
+#project-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0px 15px 0px;
+}
+
+#project-buttons > * {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+#project-buttons > *:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+#projects-outer {
+  display: flex;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* PROJECTS LIST */
+#projects {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.separator {
+  border-top: 0.5px solid var(--text-color);
+}
+
+.tech-used {
+  font-size: 18px;
+  color: var(--dark-text-color);
+  font-style: italic;
+}
+
+/* INDIVIDUAL PROJECT */
+#project-showcase {
+  flex: 1;
+}
+
+#showcase-img {
+  width: 90%;
+  margin: 0px 5% 20px 5%;
+}
+
+#showcase-title {
+  margin-bottom: 8px;
+}
+
+#showcase-desc {
+  margin-bottom: 8px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.project-links button {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+.project-links button:hover {
+  color: var(--text-color);
+  background-color: transparent;
+}

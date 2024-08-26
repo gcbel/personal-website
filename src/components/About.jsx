@@ -9,7 +9,6 @@ export default function About() {
     "me-and-poppy.jpeg",
     "poppy-at-work.JPG",
     "outdoors.JPG",
-    "baking.JPG",
   ];
 
   const captions = [
@@ -17,7 +16,6 @@ export default function About() {
     "Me and my beloved Poppy",
     "Poppy hard at work",
     "My ideal ski slope",
-    "let curActivity = baking;",
   ];
 
   const alt = [
@@ -25,7 +23,6 @@ export default function About() {
     "Gabby and a bunny",
     "Bunny on a computer",
     "The Grand Tetons",
-    "Cinnamon Rolls",
   ];
 
   /* Handle photo in profile section */
@@ -63,8 +60,7 @@ export default function About() {
             in June 2024.
           </p>
           <p className="large-text">
-            I love programming (for fun and for innovation), bunnies,
-            snowboarding, and baking.
+            I love bunnies, snowboarding, and I've always loved computers.
           </p>
         </div>
         <div id="pictures-and-captions">
@@ -92,6 +88,14 @@ export default function About() {
             className={photoIndex == 0 ? "hidden-with-space" : ""}
           >{`${captions[photoIndex]}`}</p>
         </div>
+      </div>
+      <div id="about-me-bottom">
+        <p>arrow</p>
+        <img
+          src="../../baby-gabby.jpeg"
+          alt="Young Gabby playing a video game on an old computer"
+          id="baby-picture"
+        ></img>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
-import "../styles/miscPages.css";
 
 /* FULL PAGE */
 export default function Main() {
@@ -19,8 +18,6 @@ export default function Main() {
         document.documentElement.scrollHeight - window.innerHeight * 2;
 
       if (scrollTop > fadeBottom) {
-        console.log(fadeBottom);
-        console.log(scrollTop);
         const opacity = 0 + (scrollTop - fadeBottom) * 0.001;
         setOpacity(Math.min(opacity, 0.4));
       } else if (scrollTop < fadeTop) {

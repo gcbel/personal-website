@@ -5,9 +5,9 @@ import "../styles/contact.css";
 
 /* CONTACT PAGE */
 export default function Contact() {
-  const [sendMessage, toggleSendMessage] = useState(false);
+  const [messageSection, showMessageSection] = useState(false);
   const handleClickSendMessage = () => {
-    toggleSendMessage(!sendMessage);
+    showMessageSection(!messageSection);
   };
 
   return (
@@ -20,31 +20,32 @@ export default function Contact() {
         <div className="mulish" id="contact-content">
           <h3 className="large-text">Let's talk about</h3>
           <div id="interests">
-            <ul className="borders">Optimizing healthcare</ul>
-            <ul className="borders">Biotech</ul>
-            <ul className="borders">Medical research</ul>
-            <ul className="borders">Improving global health</ul>
-            <ul className="borders">Electronic health records</ul>
-            <ul className="borders">Stanford</ul>
-            <ul className="borders">The future of medicine</ul>
-            <ul className="borders">Startups</ul>
+            <button className="borders mulish">Optimizing healthcare</button>
+            <button className="borders mulish">Biotech</button>
+            <button className="borders mulish">Medical research</button>
+            <button className="borders mulish">Improving global health</button>
+            <button className="borders mulish">
+              Electronic health records
+            </button>
+            <button className="borders mulish">Stanford</button>
+            <button className="borders mulish">The future of medicine</button>
+            <button className="borders mulish">Startups</button>
           </div>
           <h3 className="large-text" id="my-skills">
             My skills
           </h3>
           <div id="skills">
-            <ul className="borders">Python</ul>
-            <ul className="borders">C/C++</ul>
-            <ul className="borders">Javascript</ul>
-            <ul className="borders">R</ul>
-            <ul className="borders">Frontend</ul>
-            <ul className="borders">Backend</ul>
-            <ul className="borders">Fullstack</ul>
-            <ul className="borders">Vanilla CSS</ul>
-            <ul className="borders">SQL</ul>
-            <ul className="borders">Building dynamic websites</ul>
-            <ul className="borders">React</ul>
-            <ul className="borders">Integrating AI</ul>
+            <button className="borders mulish">Python</button>
+            <button className="borders mulish">C/C++</button>
+            <button className="borders mulish">Javascript</button>
+            <button className="borders mulish">R</button>
+            <button className="borders mulish">Frontend</button>
+            <button className="borders mulish">Backend</button>
+            <button className="borders mulish">Fullstack</button>
+            <button className="borders mulish">Vanilla CSS</button>
+            <button className="borders mulish">SQL</button>
+            <button className="borders mulish">React</button>
+            <button className="borders mulish">Integrating AI</button>
           </div>
           <div id="send-message-div">
             <button
@@ -57,14 +58,17 @@ export default function Contact() {
           </div>
           <div className="mulish" id="contact">
             <a>Email</a>
-            <a>Linkedin</a>
-            <a>Github</a>
-            <a>Handshake</a>
+            <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">
+              Linkedin
+            </a>
+            <a href="https://github.com/gcbel" target="_blank">
+              Github
+            </a>
             <a>Medium</a>
           </div>
         </div>
       </div>
-      <div className={sendMessage ? "" : "hidden"}>
+      <div className={messageSection ? "" : "hidden"}>
         <Message />
       </div>
     </div>

@@ -25,9 +25,27 @@ export default function Nav() {
     };
   }, []);
 
-  // Handle arrow on correct page
-  const [page, setActivePage] = useState("about");
-  const handlePageScroll = () => {};
+  // Handle scrolling to correct page
+  const [page, setActivePage] = useState("about-page");
+  const handlePageScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+      let offset = 200;
+      if (id === "contact-page") {
+        offset = 0;
+      }
+
+      const position = sectionTop - offset;
+      window.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+
+      setActivePage(id); // Optionally set active page state
+    }
+  };
 
   // Show scroll bar
   const { scrollYProgress } = useScroll();
@@ -47,19 +65,22 @@ export default function Nav() {
         </div>
         <div className="mulish" id="right-nav-content">
           <div>
-            <a to="/" onClick={() => handlePageScroll("about")}>
+            <a to="/" onClick={() => handlePageScroll("about-page")}>
               About
             </a>
           </div>
           <div>
-            <a onClick={() => handlePageScroll("projects")}> Projects</a>
+            <a onClick={() => handlePageScroll("project-page")}> Projects</a>
           </div>
           <div>
-            <a onClick={() => handlePageScroll("contact")}> Contact</a>
+            <a onClick={() => handlePageScroll("contact-page")}> Contact</a>
           </div>
         </div>
       </div>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      <motion.div
+        className="progress-bar page-inner-large"
+        style={{ scaleX }}
+      />
     </nav>
   );
 }

@@ -60,22 +60,22 @@ export default function Experience() {
             </div>
             <div className="education-outer-div">
               <div className="education-top-div">
-                <p className="education-left">B.S in Biology</p>
-                <p className="education-right">Stanford</p>
-              </div>
-              <div className="education-bottom-div">
-                <p className="education-left">Biochemistry & Biophysics</p>
-                <p className="education-right">June 2024</p>
-              </div>
-            </div>
-            <div className="education-outer-div">
-              <div className="education-top-div">
                 <p className="education-left">Certificate</p>
                 <p className="education-right">Columbia</p>
               </div>
               <div className="education-bottom-div">
                 <p className="education-left">Full-Stack Development</p>
                 <p className="education-right">August 2024</p>
+              </div>
+            </div>
+            <div className="education-outer-div">
+              <div className="education-top-div">
+                <p className="education-left">B.S in Biology</p>
+                <p className="education-right">Stanford</p>
+              </div>
+              <div className="education-bottom-div">
+                <p className="education-left">Biochemistry & Biophysics</p>
+                <p className="education-right">June 2024</p>
               </div>
             </div>
           </div>

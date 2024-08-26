@@ -11,14 +11,8 @@
   margin-bottom: 40px;
 }
 
-#contact {
-  border-top: 0.5px solid var(--text-color);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 0px 0px 0px;
-  gap: 10px;
-  flex-wrap: wrap;
+#contact-content {
+  margin-top: 20px;
 }
 
 #interests,
@@ -30,12 +24,35 @@
   margin-bottom: 30px;
 }
 
+#interests > *,
+#skills > * {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+#interests > *:hover,
+#skills > *:hover {
+  color: var(--dark-text-color);
+  border: 0.5px solid var(--dark-text-color);
+}
+
 #my-skills {
   margin-top: 30px;
 }
 
-#contact-content {
-  margin-top: 20px;
+#contact {
+  border-top: 0.5px solid var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#contact a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 /* MESSAGE SECTION */
@@ -51,6 +68,11 @@
   color: var(--background-color);
 }
 
+#send-message-button:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 #message-modal-background {
   background-color: var(--clear-background-color);
   position: fixed;
@@ -58,6 +80,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
+  min-width: 300px;
   z-index: 1;
   margin: 0px;
   display: flex;
@@ -68,6 +91,37 @@
 #message-modal {
   color: var(--text-color);
   background-color: var(--background-color);
+  width: 100%;
+  padding: 20px;
+}
+
+#message-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#dismiss-modal {
+  transform: scale(1.2, 1);
+}
+
+#message-prompts input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 0.5px solid var(--text-color);
+  padding-bottom: 10px;
+}
+
+#top-message-prompts {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+}
+
+#top-message-prompts input {
+  width: 100%;
 }
 
 @media (min-width: 900px) {
