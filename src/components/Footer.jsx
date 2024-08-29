@@ -6,7 +6,7 @@ import "../styles/footer.css";
 export default function Footer() {
   return (
     <footer className="mulish">
-      <a id="email-icon">
+      <a href="mailto:gcrbelanger@gmail.com" id="email-icon">
         <i className="fa fa-envelope"></i>
       </a>
       <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">

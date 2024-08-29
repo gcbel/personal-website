@@ -56,14 +56,16 @@ export default function Contact() {
             </button>
           </div>
           <div className="mulish" id="contact">
-            <a>Email</a>
+            <a href="mailto:gcrbelanger@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">
               Linkedin
             </a>
             <a href="https://github.com/gcbel" target="_blank">
               Github
             </a>
-            <a>Medium</a>
+            <a href="https://medium.com/@gabriellecbelanger" target="_blank">
+              Medium
+            </a>
           </div>
         </div>
       </div>

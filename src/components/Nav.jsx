@@ -43,7 +43,7 @@ export default function Nav() {
         behavior: "smooth",
       });
 
-      setActivePage(id); // Optionally set active page state
+      setActivePage(id);
     }
   };
 
@@ -73,7 +73,7 @@ export default function Nav() {
             <a onClick={() => handlePageScroll("project-page")}> Projects</a>
           </div>
           <div>
-            <a onClick={() => handlePageScroll("contact-page")}> Contact</a>
+            <a onClick={() => handlePageScroll("contact")}> Contact</a>
           </div>
         </div>
       </div>

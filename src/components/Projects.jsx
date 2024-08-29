@@ -94,7 +94,12 @@ export default function Projects() {
           >
             ML and more
           </button>
-          <button className="borders mulish">See more</button>
+          <button
+            className="borders mulish"
+            onClick={() => window.open("https://github.com/gcbel", "_blank")}
+          >
+            See more
+          </button>
         </div>
         <div id="projects-outer">
           <div id="projects">

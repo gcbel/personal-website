@@ -56,6 +56,11 @@
   color: var(--text-color);
 }
 
+#contact a:hover {
+  text-decoration: none;
+  color: var(--dark-text-color);
+}
+
 /* MESSAGE SECTION */
 #send-message-div {
   display: flex;
