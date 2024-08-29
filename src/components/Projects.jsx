@@ -134,7 +134,16 @@ export default function Projects() {
               >
                 Github
               </button>
-              <button className="mulish borders">Site</button>
+              {showcase.site ? (
+                <button
+                  className="mulish borders"
+                  onClick={() => window.open(showcase.site, "_blank")}
+                >
+                  Site
+                </button>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
