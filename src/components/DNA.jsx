@@ -68,8 +68,8 @@ const DNA = () => {
         const molecule = new THREE.Mesh(geometry, material);
         const basepair = new THREE.Mesh(geometry, bpMaterial);
 
-        console.log("random", Math.random() - 1.8);
-        console.log("absolute", (-1.8 * (j + 1)) / numAtoms["base"]);
+        // console.log("random", Math.random() - 1.8);
+        // console.log("absolute", (-1.8 * (j + 1)) / numAtoms["base"]);
 
         molecule.position.set(
           // x - (Math.random() - 1) * 0.15 + x * (Math.random() - 1.8),

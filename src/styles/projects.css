@@ -38,6 +38,7 @@
 }
 
 .separator {
+  margin-top: 15px;
   border-top: 0.5px solid var(--text-color);
 }
 
