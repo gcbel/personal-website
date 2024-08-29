@@ -27,19 +27,10 @@ export default function About() {
 
   /* Handle photo in profile section */
   const [photoIndex, setPhotoIndex] = useState(0);
-  const [fade, setFade] = useState(false);
 
   const switchPhoto = (change) => {
-    setFade(false);
-    setTimeout(() => {
-      setPhotoIndex((photoIndex + change + photos.length) % photos.length);
-      setFade(true);
-    }, 0);
+    setPhotoIndex((photoIndex + change + photos.length) % photos.length);
   };
-
-  useEffect(() => {
-    setFade(true); // Fade in the first image on component mount
-  }, []);
 
   return (
     <div className="page page-inner-large" id="about-page">
@@ -75,7 +66,6 @@ export default function About() {
               src={`../../${photos[photoIndex]}`}
               alt={`${alt[photoIndex]}`}
               id="profile-picture"
-              className={fade ? "fade-in" : ""}
             ></img>
             <button
               onClick={() => switchPhoto(1)}
