@@ -9,15 +9,23 @@ import "../styles/projects.css";
 export default function Projects() {
   // All project information
   const projIndex = 0;
-  const images = ["ehr.png"];
+  const images = [
+    "vector-space.png",
+    "vector-space.png",
+    "greentrail.png",
+    "directors-cut.png",
+    "vector-space.png",
+  ];
   const titles = [
     "Electronic Health Record",
+    "Aptitude",
     "Greentrail",
     "Director's Cut",
     "Discord Bot",
   ];
   const descriptions = [
     "Website designed for doctors and patients to interface about patient health and store health data of patients.",
+    "Skill acquisition and learning platform built for users to track and quantify their goals for learning.",
     "Ethical travel website built to uplift small communities and facilitate mindful travel practices.",
     "Site built to provide movie recommendations based on a user's preferences.",
     "Automated moderator bot built to detect and target romance scams, uses Discord as a proxy.",
@@ -53,6 +61,7 @@ export default function Projects() {
           >
             ML and more
           </button>
+          <button className="borders mulish">See more</button>
         </div>
         <div id="projects-outer">
           {selected === "featured" ? <FeaturedProjects /> : ""}
