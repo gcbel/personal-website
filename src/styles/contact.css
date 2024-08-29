@@ -13,16 +13,16 @@
 }
 
 #contact-content {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #interests,
 #skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #interests > *,
@@ -63,7 +63,7 @@
 }
 
 #send-message-button {
-  margin: 20px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
   border-radius: 25px;
   background-color: var(--text-color);
   color: var(--background-color);
@@ -125,6 +125,7 @@
   width: 100%;
 }
 
+/* TABLETS */
 @media (min-width: 900px) {
   /* CONTACT PAGE */
   #contact-page-inner {
@@ -140,11 +141,21 @@
   }
 
   #contact-content {
+    margin-top: 20px;
+  }
+
+  #contact-content {
     flex: 3;
   }
 
   #interests,
   #skills {
     margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  /* MESSAGE SECTION */
+  #send-message-button {
+    margin: 20px 0px 20px 0px;
   }
 }

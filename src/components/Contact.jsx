@@ -29,7 +29,6 @@ export default function Contact() {
             </button>
             <button className="borders mulish">Stanford</button>
             <button className="borders mulish">The future of medicine</button>
-            <button className="borders mulish">Startups</button>
           </div>
           <h3 className="large-text" id="my-skills">
             My skills
