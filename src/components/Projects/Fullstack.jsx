@@ -8,6 +8,10 @@ export default function FullstackProjects() {
         <p className="tech-used">Fullstack</p>
       </div>
       <div className="separator"></div>
+      <div className="project">
+        <h4 className="large-text">Greentrail</h4>
+        <p className="tech-used">Fullstack</p>
+      </div>
     </div>
   );
 }
