@@ -23,8 +23,26 @@
 
 #projects-outer {
   display: flex;
-  gap: 60px;
+  flex-direction: column;
+  gap: 30px;
   margin-top: 40px;
+}
+
+#project-showcase {
+  order: -1;
+}
+
+#showcase-image-div {
+  width: 100%;
+  padding-top: 46%;
+  position: relative;
+}
+
+#showcase-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 /* PROJECTS LIST */
@@ -81,4 +99,15 @@
 .project-links button:hover {
   color: var(--text-color);
   background-color: transparent;
+}
+
+@media (min-width: 750px) {
+  #projects-outer {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  #project-showcase {
+    order: 1;
+  }
 }

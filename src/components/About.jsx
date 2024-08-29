@@ -66,7 +66,6 @@ export default function About() {
             <div id="profile-pic-div">
               <AnimatePresence>
                 <motion.img
-                  key={photos[photoIndex]}
                   src={`../../${photos[photoIndex]}`}
                   alt={alt[photoIndex]}
                   id="profile-picture"

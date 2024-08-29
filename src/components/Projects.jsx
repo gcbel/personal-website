@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/projects.css";
 
 /* PROJECT PAGE */
@@ -111,20 +112,27 @@ export default function Projects() {
               >
                 <h4 className="large-text">{projects[id].title}</h4>
                 <p className="tech-used">{projects[id].type}</p>
-                {index < selected.length - 1 ? (
+                {index < selected.length - 1 && (
                   <div className="separator"></div>
-                ) : (
-                  ""
                 )}
               </div>
             ))}
           </div>
           <div id="project-showcase">
-            <img
-              src={`../../${showcase.image}`}
-              alt={showcase.title}
-              id="showcase-img"
-            ></img>
+            <div id="showcase-image-div">
+              <AnimatePresence>
+                <motion.img
+                  key={showcase.id}
+                  src={`../../${showcase.image}`}
+                  alt={showcase.title}
+                  id="showcase-img"
+                  initial={{ opacity: 0, x: 0, y: 0 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  exit={{ opacity: 0, x: 0, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </AnimatePresence>
+            </div>
             <h3 className="cormorant large-text" id="showcase-title">
               {showcase.title}
             </h3>
@@ -139,15 +147,13 @@ export default function Projects() {
               >
                 Github
               </button>
-              {showcase.site ? (
+              {showcase.site && (
                 <button
                   className="mulish borders"
                   onClick={() => window.open(showcase.site, "_blank")}
                 >
                   Site
                 </button>
-              ) : (
-                ""
               )}
             </div>
           </div>
