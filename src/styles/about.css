@@ -45,11 +45,20 @@
   color: var(--dark-text-color);
 }
 
+#profile-pic-div {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
 #profile-picture {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .image-button {
@@ -66,15 +75,21 @@
 }
 
 #baby-picture {
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
 /* TABLET */
 @media (min-width: 750px) {
   /* ABOUT PAGE */
+  #profile-pic-div {
+    height: 260px;
+    width: 260px;
+  }
+
   #profile-picture {
     height: 250px;
     width: 250px;

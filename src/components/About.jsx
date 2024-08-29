@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/about.css";
 
 /* ABOUT PAGE */
@@ -62,11 +63,20 @@ export default function About() {
             >
               &lt;
             </button>
-            <img
-              src={`../../${photos[photoIndex]}`}
-              alt={`${alt[photoIndex]}`}
-              id="profile-picture"
-            ></img>
+            <div id="profile-pic-div">
+              <AnimatePresence>
+                <motion.img
+                  key={photos[photoIndex]}
+                  src={`../../${photos[photoIndex]}`}
+                  alt={alt[photoIndex]}
+                  id="profile-picture"
+                  initial={{ opacity: 0, x: 0, y: 0 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  exit={{ opacity: 0, x: 0, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </AnimatePresence>
+            </div>
             <button
               onClick={() => switchPhoto(1)}
               className="mulish image-button"
