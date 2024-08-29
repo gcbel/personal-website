@@ -23,7 +23,7 @@ export default function Contact() {
             <button className="borders mulish">Optimizing healthcare</button>
             <button className="borders mulish">Biotech</button>
             <button className="borders mulish">Medical research</button>
-            <button className="borders mulish">Improving global health</button>
+            <button className="borders mulish">Global health</button>
             <button className="borders mulish">
               Electronic health records
             </button>

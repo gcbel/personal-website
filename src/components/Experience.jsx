@@ -6,8 +6,8 @@ import "../styles/experience.css";
 /* EXPERIENCE PAGE */
 export default function Experience() {
   const [collapseContent, setCollapseContent] = useState(true);
-  const [showEducation, toggleShowEducation] = useState(false);
-  const [showExperience, toggleShowExperience] = useState(false);
+  const [showEducation, toggleShowEducation] = useState(true);
+  const [showExperience, toggleShowExperience] = useState(true);
   const handleShowDiv = (divName) => {
     if (divName === "education") {
       toggleShowEducation(!showEducation);
@@ -44,7 +44,11 @@ export default function Experience() {
               className={collapseContent ? "" : "hidden"}
               onClick={() => handleShowDiv("education")}
             >
-              {showEducation ? <p>&and;</p> : <p>&or;</p>}
+              {showEducation ? (
+                <p id="ed-hide">&and;</p>
+              ) : (
+                <p id="ed-show">&or;</p>
+              )}
             </div>
           </div>
           <div className={collapseContent && !showEducation ? "hidden" : ""}>
@@ -87,7 +91,11 @@ export default function Experience() {
               className={collapseContent ? "" : "hidden"}
               onClick={() => handleShowDiv("experience")}
             >
-              {showExperience ? <p>&and;</p> : <p>&or;</p>}
+              {showExperience ? (
+                <p id="ex-hide">&and;</p>
+              ) : (
+                <p id="ex-show">&or;</p>
+              )}
             </div>
           </div>
           <div className={collapseContent && !showExperience ? "hidden" : ""}>

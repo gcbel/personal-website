@@ -37,7 +37,7 @@ export default function About() {
       <h2 className="title cormorant">A little about me</h2>
       <div className="mulish" id="blurb-and-photo">
         <div id="blurb">
-          <p id="location">
+          <p className="large-text" id="location">
             <i className="fa fa-map-marker"></i>San Francisco
           </p>
           <p className="large-text">
