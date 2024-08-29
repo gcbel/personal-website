@@ -133,7 +133,7 @@ export default function Projects() {
                 />
               </AnimatePresence>
             </div>
-            <h3 className="cormorant large-text" id="showcase-title">
+            <h3 className="large-text" id="showcase-title">
               {showcase.title}
             </h3>
             <p id="showcase-desc">{showcase.description}</p>

@@ -32,9 +32,13 @@ export default function Nav() {
     if (section) {
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
-      let offset = 200;
-      if (id === "contact-page") {
-        offset = 0;
+      let offset = 0;
+      if (id === "about-page") {
+        offset = 60 + window.innerWidth * 0.1;
+      }
+
+      if (id === "project-page") {
+        offset = 80 + window.innerWidth * 0.02;
       }
 
       const position = sectionTop - offset;
@@ -73,7 +77,7 @@ export default function Nav() {
             <a onClick={() => handlePageScroll("project-page")}> Projects</a>
           </div>
           <div>
-            <a onClick={() => handlePageScroll("contact")}> Contact</a>
+            <a onClick={() => handlePageScroll("contact-page")}> Contact</a>
           </div>
         </div>
       </div>
