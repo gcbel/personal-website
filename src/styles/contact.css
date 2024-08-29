@@ -75,7 +75,7 @@
 }
 
 #send-message-button:hover {
-  background-color: var(--background-color);
+  background-color: transparent;
   color: var(--text-color);
 }
 
@@ -110,6 +110,10 @@
 
 #dismiss-modal {
   transform: scale(1.2, 1);
+}
+
+#dismiss-modal:hover {
+  color: var(--dark-text-color);
 }
 
 #message-prompts input {

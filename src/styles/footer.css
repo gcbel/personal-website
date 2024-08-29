@@ -19,7 +19,16 @@ footer > *:hover {
 }
 
 #email-icon {
-  font-size: 22px;
+  font-size: 21px;
+}
+
+#medium-icon {
+  position: relative;
+  top: -3px;
+}
+
+#medium-icon:hover path {
+  fill: var(--dark-text-color);
 }
 
 /* TABLETS */

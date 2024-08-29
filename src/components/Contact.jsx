@@ -6,7 +6,7 @@ import "../styles/contact.css";
 /* CONTACT PAGE */
 export default function Contact() {
   const [messageSection, showMessageSection] = useState(false);
-  const handleClickSendMessage = () => {
+  const handleShowMessageSection = () => {
     showMessageSection(!messageSection);
   };
 
@@ -50,7 +50,7 @@ export default function Contact() {
             <button
               className="borders mulish large-text"
               id="send-message-button"
-              onClick={() => handleClickSendMessage()}
+              onClick={() => handleShowMessageSection()}
             >
               Send me a message
             </button>
@@ -70,7 +70,7 @@ export default function Contact() {
         </div>
       </div>
       <div className={messageSection ? "" : "hidden"}>
-        <Message />
+        <Message onDismiss={handleShowMessageSection} />
       </div>
     </div>
   );

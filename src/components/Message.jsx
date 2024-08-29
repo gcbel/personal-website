@@ -1,7 +1,7 @@
 /* DEPENDENCIES */
 
 /* MESSAGE PAGE */
-export default function Message() {
+export default function Message({ onDismiss }) {
   return (
     <div className="mulish" id="message-modal-background">
       <div className="borders page-inner" id="message-modal">
@@ -9,7 +9,13 @@ export default function Message() {
           <h2 className="subtitle cormorant" id="message-title">
             Send me a message!
           </h2>
-          <p id="dismiss-modal">X</p>
+          <p
+            onClick={onDismiss}
+            style={{ cursor: "pointer" }}
+            id="dismiss-modal"
+          >
+            X
+          </p>
         </div>
         <div id="message-prompts">
           <div id="top-message-prompts">
