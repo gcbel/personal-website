@@ -20,6 +20,8 @@ Webpage can be viewed in any browser and navigation links in the top right can b
 
 ## Credits
 
+Framer Motion Docs: https://www.framer.com/motion/ <br>
+Framer Motion Crash Course: https://youtu.be/znbCa4Rr054 <br>
 CSS Reset file: https://meyerweb.com/eric/tools/css/reset/
 
 ## License
