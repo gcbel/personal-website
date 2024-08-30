@@ -1,10 +1,12 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useAnimation, useSpring } from "framer-motion";
 import "../styles/nav.css";
 
 /* NAV BAR */
 export default function Nav() {
+  const controls = useAnimation();
+
   // Handle blurring
   const [isBlurred, setIsBlurred] = useState(false);
   useEffect(() => {
@@ -24,6 +26,15 @@ export default function Nav() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Handle animation
+  useEffect(() => {
+    controls.start({
+      opacity: [1, 1],
+      y: [0, 0],
+      transition: { duration: 1, ease: "easeOut" },
+    });
+  }, [controls]);
 
   // Handle scrolling to correct page
   const [page, setActivePage] = useState("about-page");
@@ -60,7 +71,11 @@ export default function Nav() {
   });
 
   return (
-    <nav className={`${isBlurred ? "nav-blur" : ""}`}>
+    <motion.nav
+      className={`${isBlurred ? "nav-blur" : ""}`}
+      initial={{ opacity: 0 }}
+      animate={controls}
+    >
       <div id="nav-content">
         <div id="left-nav-content">
           <h1 to="/" className="cormorant subtitle" id="home">
@@ -85,6 +100,6 @@ export default function Nav() {
         className="progress-bar page-inner-large"
         style={{ scaleX }}
       />
-    </nav>
+    </motion.nav>
   );
 }

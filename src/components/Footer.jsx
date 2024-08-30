@@ -1,21 +1,50 @@
 /* DEPENDENCIES */
+import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
 import "../styles/footer.css";
 
 /* EXPORT */
 /* Renders footer */
 export default function Footer() {
+  const controls = useAnimation();
+
+  // Handle animation
+  useEffect(() => {
+    controls.start({
+      opacity: [0, 1],
+      y: [200, 0],
+      transition: { duration: 0.8, ease: "easeOut" },
+    });
+  }, [controls]);
+
   return (
-    <footer className="mulish">
+    <motion.footer
+      className="mulish"
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+    >
       <a href="mailto:gcrbelanger@gmail.com" id="email-icon">
         <i className="fa fa-envelope"></i>
       </a>
-      <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/gcbelanger/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <i className="fa fa-linkedin"></i>
       </a>
-      <a href="https://github.com/gcbel" target="_blank">
+      <a
+        href="https://github.com/gcbel"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <i className="fa fa-github"></i>
       </a>
-      <a href="https://medium.com/@gabriellecbelanger" target="_blank">
+      <a
+        href="https://medium.com/@gabriellecbelanger"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           id="medium-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +56,6 @@ export default function Footer() {
           />
         </svg>
       </a>
-    </footer>
+    </motion.footer>
   );
 }
