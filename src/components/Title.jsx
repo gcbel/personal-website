@@ -10,6 +10,7 @@ export default function About() {
   const title = "Hi! I'm Gabby. ";
   useEffect(() => {
     let i = -1;
+    setTimeout(200);
     function writeTitle() {
       if (i < title.length) {
         i++;

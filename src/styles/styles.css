@@ -104,6 +104,11 @@ html {
   border-radius: 20px;
 }
 
+.separator {
+  margin-top: 15px;
+  border-top: 0.5px solid var(--text-color);
+}
+
 /* LARGE MOBILE */
 @media (min-width: 455px) {
   .page-inner {

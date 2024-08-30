@@ -1,6 +1,6 @@
 /* DEPENDENCIES */
 import React, { useState, useEffect, useRef } from "react";
-import { useAnimate, useInView, motion } from "framer-motion";
+import { useAnimation, useInView, motion } from "framer-motion";
 import DNA from "../components/DNA";
 import "../styles/experience.css";
 
@@ -8,14 +8,8 @@ import "../styles/experience.css";
 const parentVariants = {
   visible: {
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.4,
-    },
-  },
-  hidden: {
-    transition: {
-      staggerChildren: 0.1,
-      staggerDirection: -1,
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
     },
   },
 };
@@ -25,68 +19,58 @@ const childVariants = {
   hidden: { opacity: 0, y: 20 },
 };
 
+/* EXPERIENCE PAGE */
 export default function Experience() {
-  // Handle animations
-  const [scope, animate] = useAnimate();
   const ref = useRef(null);
+  const controls = useAnimation();
   const isInView = useInView(ref, { once: true });
 
-  useEffect(() => {
-    if (isInView) {
-      animate(ref.current, { opacity: 1, y: 0 }, { duration: 0.8 });
-    } else {
-      animate(ref.current, { opacity: 0, y: 20 }, { duration: 0.8 });
-    }
-  }, [isInView, animate]);
-
   // Handle showing/collapsing content when page is smaller than 750 px
-  const [collapseContent, setCollapseContent] = useState(true);
-  const [showEducation, toggleShowEducation] = useState(true);
-  const [showExperience, toggleShowExperience] = useState(true);
-
-  const handleShowDiv = (divName) => {
-    if (divName === "education") {
-      toggleShowEducation(!showEducation);
-    } else {
-      toggleShowExperience(!showExperience);
-    }
-  };
-
-  const handleCollapseContent = () => {
-    if (window.innerWidth > 750) {
-      setCollapseContent(false);
-    } else {
-      setCollapseContent(true);
-    }
-  };
+  const [collapseContent, setCollapseContent] = useState(
+    window.innerWidth <= 750
+  );
+  const [showEducation, setShowEducation] = useState(true);
+  const [showExperience, setShowExperience] = useState(true);
 
   useEffect(() => {
-    handleCollapseContent();
-
-    window.addEventListener("resize", handleCollapseContent);
-    return () => {
-      window.removeEventListener("resize", handleCollapseContent);
-    };
+    const handleResize = () => setCollapseContent(window.innerWidth <= 750);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleToggle = (section) => {
+    if (section === "education") {
+      setShowEducation(!showEducation);
+    } else {
+      setShowExperience(!showExperience);
+    }
+  };
+
+  // Handle animation
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
   return (
-    <div className="page-inner" id="experience-page" ref={ref}>
+    <div className="page-inner" id="experience-page">
       <DNA />
       <motion.div
         className="mulish"
         id="education-and-experience"
         variants={parentVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={controls}
       >
         <div id="education">
-          <div id="education-header">
-            <motion.h3 variants={childVariants} className="subtitle">
-              Education
-            </motion.h3>
+          <motion.div variants={childVariants} id="education-header">
+            <h3 className="subtitle">Education</h3>
             <div
               className={collapseContent ? "" : "hidden"}
-              onClick={() => handleShowDiv("education")}
+              onClick={() => handleToggle("education")}
             >
               {showEducation ? (
                 <p id="ed-hide">&and;</p>
@@ -94,12 +78,15 @@ export default function Experience() {
                 <p id="ed-show">&or;</p>
               )}
             </div>
-          </div>
+          </motion.div>
           <motion.div
             className="separator"
             variants={childVariants}
+            ref={ref}
           ></motion.div>
-          <div className={collapseContent && !showEducation ? "hidden" : ""}>
+          <motion.div
+            className={collapseContent && !showEducation ? "hidden" : ""}
+          >
             <motion.div
               className="education-outer-div"
               variants={childVariants}
@@ -139,16 +126,14 @@ export default function Experience() {
                 <p className="education-right">June 2024</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
         <div id="experience">
-          <div id="experience-header">
-            <motion.h3 className="subtitle" variants={childVariants}>
-              Experience
-            </motion.h3>
+          <motion.div variants={childVariants} id="experience-header">
+            <h3 className="subtitle">Experience</h3>
             <div
               className={collapseContent ? "" : "hidden"}
-              onClick={() => handleShowDiv("experience")}
+              onClick={() => handleToggle("experience")}
             >
               {showExperience ? (
                 <p id="ex-hide">&and;</p>
@@ -156,12 +141,14 @@ export default function Experience() {
                 <p id="ex-show">&or;</p>
               )}
             </div>
-          </div>
+          </motion.div>
           <motion.div
             className="separator"
             variants={childVariants}
           ></motion.div>
-          <div className={collapseContent && !showExperience ? "hidden" : ""}>
+          <motion.div
+            className={collapseContent && !showExperience ? "hidden" : ""}
+          >
             <motion.div
               className="education-outer-div"
               variants={childVariants}
@@ -203,7 +190,7 @@ export default function Experience() {
                 <p className="education-right">May 2021 - December 2021</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </div>

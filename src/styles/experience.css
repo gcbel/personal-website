@@ -18,6 +18,10 @@
   justify-content: space-between;
 }
 
+#experience-header {
+  margin-top: 15px;
+}
+
 #education-header p,
 #experience-header p {
   transform: scale(1.25, 0.6);

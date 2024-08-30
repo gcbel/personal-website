@@ -1,63 +1,98 @@
 /* DEPENDENCIES */
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import {
+  useAnimation,
+  useInView,
+  motion,
+  AnimatePresence,
+} from "framer-motion";
 import "../styles/projects.css";
+
+/* VARIANTS */
+const parentVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const rightVariants = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: 40 },
+};
+
+const leftVariants = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -10 },
+};
+
+const showcaseVariants = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 0 },
+};
+
+/* VARIABLES */
+// All project information
+const projects = [
+  {
+    id: 0,
+    title: "Electronic Health Record",
+    image: "vector-space.png",
+    description:
+      "Website designed for doctors and patients to interface about patient health and store health data of patients.",
+    type: "Fullstack",
+    tech: "React",
+    github: "https://github.com/gcbel/ehr",
+  },
+  {
+    id: 1,
+    title: "Aptitude",
+    image: "vector-space.png",
+    description:
+      "Skill acquisition and learning platform built for users to track and quantify their goals for learning.",
+    type: "Fullstack",
+    tech: "React",
+    github: "https://github.com/gcbel/aptitude",
+  },
+  {
+    id: 2,
+    title: "Greentrail",
+    image: "greentrail.png",
+    description:
+      "Ethical travel website built to uplift small communities and facilitate mindful travel practices.",
+    type: "Fullstack",
+    tech: "React",
+    github: "https://github.com/gcbel/greentrail",
+  },
+  {
+    id: 3,
+    title: "Director's Cut",
+    image: "directors-cut.png",
+    description:
+      "Site built to provide movie recommendations based on a user's preferences.",
+    type: "MP, NLP, Fullstack",
+    tech: "ML, NLP",
+    github: "https://github.com/gcbel/movie-recommender",
+  },
+  {
+    id: 4,
+    title: "Discord Bot",
+    image: "vector-space.png",
+    description:
+      "Automated moderator bot built to detect and target romance scams, uses Discord as a proxy.",
+    type: "ML, AI",
+    tech: "Python, ML, AI",
+    github: "https://github.com/gcbel/discord-moderator-bot",
+  },
+];
 
 /* PROJECT PAGE */
 export default function Projects() {
-  // All project information
-  const projects = [
-    {
-      id: 0,
-      title: "Electronic Health Record",
-      image: "vector-space.png",
-      description:
-        "Website designed for doctors and patients to interface about patient health and store health data of patients.",
-      type: "Fullstack",
-      tech: "React",
-      github: "https://github.com/gcbel/ehr",
-    },
-    {
-      id: 1,
-      title: "Aptitude",
-      image: "vector-space.png",
-      description:
-        "Skill acquisition and learning platform built for users to track and quantify their goals for learning.",
-      type: "Fullstack",
-      tech: "React",
-      github: "https://github.com/gcbel/aptitude",
-    },
-    {
-      id: 2,
-      title: "Greentrail",
-      image: "greentrail.png",
-      description:
-        "Ethical travel website built to uplift small communities and facilitate mindful travel practices.",
-      type: "Fullstack",
-      tech: "React",
-      github: "https://github.com/gcbel/greentrail",
-    },
-    {
-      id: 3,
-      title: "Director's Cut",
-      image: "directors-cut.png",
-      description:
-        "Site built to provide movie recommendations based on a user's preferences.",
-      type: "MP, NLP, Fullstack",
-      tech: "ML, NLP",
-      github: "https://github.com/gcbel/movie-recommender",
-    },
-    {
-      id: 4,
-      title: "Discord Bot",
-      image: "vector-space.png",
-      description:
-        "Automated moderator bot built to detect and target romance scams, uses Discord as a proxy.",
-      type: "ML, AI",
-      tech: "Python, ML, AI",
-      github: "https://github.com/gcbel/discord-moderator-bot",
-    },
-  ];
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { once: true });
 
   // Handle displaying a project
   const [showcase, setShowcase] = useState(projects[0]);
@@ -72,40 +107,62 @@ export default function Projects() {
     setSelected(selection);
   };
 
+  // Handle animation
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
   return (
-    <div className="page-inner-large" id="project-page">
-      <h2 className="title cormorant">Projects</h2>
+    <motion.div
+      variants={parentVariants}
+      initial="hidden"
+      animate={controls}
+      className="page-inner-large"
+      id="project-page"
+    >
+      <motion.h2 variants={leftVariants} className="title cormorant" ref={ref}>
+        Projects
+      </motion.h2>
       <div className="mulish">
         <div id="project-buttons">
-          <button
+          <motion.button
+            variants={rightVariants}
             className="borders mulish "
             onClick={() => handleSetSelected([0, 1, 2, 3, 4])}
           >
             Featured
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            variants={rightVariants}
             className="borders mulish"
             onClick={() => handleSetSelected([0, 1, 2])}
           >
             Full Stack
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            variants={rightVariants}
             className="borders mulish"
             onClick={() => handleSetSelected([3, 4])}
           >
             ML and more
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            variants={rightVariants}
             className="borders mulish"
             onClick={() => window.open("https://github.com/gcbel", "_blank")}
           >
             See more
-          </button>
+          </motion.button>
         </div>
         <div id="projects-outer">
           <div id="projects">
             {selected.map((id, index) => (
-              <div
+              <motion.div
+                variants={leftVariants}
                 key={id}
                 className="project"
                 onClick={() => handleProjectShowcase(id)}
@@ -115,10 +172,10 @@ export default function Projects() {
                 {index < selected.length - 1 && (
                   <div className="separator"></div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div id="project-showcase">
+          <motion.div variants={showcaseVariants} id="project-showcase">
             <div id="showcase-image-div">
               <AnimatePresence>
                 <motion.img
@@ -156,9 +213,9 @@ export default function Projects() {
                 </button>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
