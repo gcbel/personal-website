@@ -95,6 +95,10 @@ export default function Experience() {
               )}
             </div>
           </div>
+          <motion.div
+            className="separator"
+            variants={childVariants}
+          ></motion.div>
           <div className={collapseContent && !showEducation ? "hidden" : ""}>
             <motion.div
               className="education-outer-div"
@@ -153,6 +157,10 @@ export default function Experience() {
               )}
             </div>
           </div>
+          <motion.div
+            className="separator"
+            variants={childVariants}
+          ></motion.div>
           <div className={collapseContent && !showExperience ? "hidden" : ""}>
             <motion.div
               className="education-outer-div"

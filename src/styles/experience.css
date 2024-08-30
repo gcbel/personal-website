@@ -16,8 +16,6 @@
 #experience-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid var(--text-color);
-  padding: 20px 0px 10px 0px;
 }
 
 #education-header p,
