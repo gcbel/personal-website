@@ -19,11 +19,11 @@ export default function Message({ onDismiss }) {
         </div>
         <div id="message-prompts">
           <div id="top-message-prompts">
-            <div>
+            <div id="name-message-prompt">
               <p>Your Name</p>
               <input className="mulish" placeholder="Enter your name"></input>
             </div>
-            <div>
+            <div id="email-message-prompt">
               <p>Email Address</p>
               <input
                 className="mulish"
@@ -35,11 +35,15 @@ export default function Message({ onDismiss }) {
             <p>Your Message</p>
             <textarea
               className="mulish"
-              placeholder="Enter your email address"
+              placeholder="Hi Gabby, I have a project idea..."
             ></textarea>
           </div>
         </div>
-        <button className="borders">Send</button>
+        <div id="send-completed-message-div">
+          <button className="borders mulish" id="send-completed-message">
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -116,25 +116,54 @@
   color: var(--dark-text-color);
 }
 
-#message-prompts input {
+#message-prompts input,
+#message-prompts textarea {
   background-color: transparent;
   border: 0px;
   border-bottom: 0.5px solid var(--text-color);
-  padding-bottom: 10px;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
 }
 
 #top-message-prompts {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   gap: 20px;
-  width: 100%;
+  padding-bottom: 20px;
 }
 
-#top-message-prompts input {
-  width: 100%;
+#name-message-prompt {
+  flex: 1;
+}
+
+#email-message-prompt {
+  flex: 1;
+}
+
+#send-completed-message-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#send-completed-message {
+  margin-top: 10px;
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
 /* TABLETS */
+@media (min-width: 600px) {
+  #message-modal {
+    padding: 30px;
+  }
+
+  #top-message-prompts {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+
 @media (min-width: 900px) {
   /* CONTACT PAGE */
   #contact-page-inner {
