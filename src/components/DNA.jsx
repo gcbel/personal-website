@@ -8,7 +8,7 @@ const bpSequence = "TACGCAATGGT";
 const colors = {
   A: 0x2d333f,
   T: 0x2f4b4b,
-  G: 0x35504e,
+  G: 0x2d4357,
   C: 0x415f51,
   backbone: 0x476374,
 };

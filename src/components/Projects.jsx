@@ -12,7 +12,7 @@ import "../styles/projects.css";
 const parentVariants = {
   visible: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.2,
       delayChildren: 0.2,
     },
   },

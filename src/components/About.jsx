@@ -153,7 +153,7 @@ export default function About() {
       </div>
       <motion.div variants={bottomVariants} id="about-me-bottom" ref={lowerRef}>
         <img
-          src="../../small-arrow.jpeg"
+          src="../../small-arrow.png"
           alt="Arrow pointing from text towards photo"
           id="small-arrow"
         ></img>
