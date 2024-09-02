@@ -53,13 +53,23 @@ const projects = [
   },
   {
     id: 4,
-    title: "Discord Bot",
+    title: "Content Moderator",
     image: "vector-space.png",
     description:
       "Automated moderator bot built to detect and target romance scams, uses Discord as a proxy.",
     type: "ML, AI",
     tech: "Python, ML, AI",
     github: "https://github.com/gcbel/discord-moderator-bot",
+  },
+  {
+    id: 5,
+    title: "Personal Website",
+    image: "vector-space.png",
+    description: "This site!",
+    type: "Fullstack",
+    tech: "React, Vite, Framer Motion, Vanilla CSS",
+    github: "https://github.com/gcbel/personal-website",
+    site: "https://gabriellecbelanger.com/",
   },
 ];
 
@@ -147,7 +157,7 @@ export default function Projects() {
           <motion.button
             variants={rightVariants}
             className="borders mulish"
-            onClick={() => handleSetSelected([0, 1, 2])}
+            onClick={() => handleSetSelected([5, 0, 1, 2])}
           >
             Full Stack
           </motion.button>
