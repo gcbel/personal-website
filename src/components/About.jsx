@@ -36,8 +36,8 @@ const bottomVariants = {
 /* VARIABLES */
 const photos = [
   "profile-picture.jpeg",
-  "me-and-poppy.jpeg",
-  "poppy-at-work.JPG",
+  "me-and-poppy.png",
+  "poppy-at-work.png",
   "outdoors.JPG",
 ];
 
