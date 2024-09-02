@@ -8,7 +8,7 @@ import "../styles/contact.css";
 const parentVariants = {
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
       delayChildren: 0.2,
     },
   },

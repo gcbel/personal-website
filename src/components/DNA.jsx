@@ -36,7 +36,7 @@ const DNA = () => {
 
     // Set up cube geometry and initial coordinates
     const geometry = new THREE.SphereGeometry(0.03, 8, 8);
-    let startY = -5;
+    let startY = -4.5;
 
     // Create double helix structure
     for (let i = 0; i < sequence.length; i++) {

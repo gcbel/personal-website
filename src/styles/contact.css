@@ -118,11 +118,14 @@
 
 #message-prompts input,
 #message-prompts textarea {
+  color: var(--text-color);
   background-color: transparent;
   border: 0px;
   border-bottom: 0.5px solid var(--text-color);
-  padding: 10px 0px 10px 0px;
+  padding: 00px 0px 10px 0px;
+  margin: 10px 0px 0px 0px;
   width: 100%;
+  outline: none;
 }
 
 #top-message-prompts {
@@ -144,12 +147,23 @@
 #send-completed-message-div {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #send-completed-message {
   margin-top: 10px;
   background-color: var(--text-color);
   color: var(--background-color);
+}
+
+#send-completed-message:hover {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+#alert {
+  color: var(--dark-text-color);
+  margin: 0px 20px 8px 0px;
 }
 
 /* TABLETS */

@@ -8,31 +8,6 @@ import {
 } from "framer-motion";
 import "../styles/projects.css";
 
-/* VARIANTS */
-const parentVariants = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const rightVariants = {
-  visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 0, x: 40 },
-};
-
-const leftVariants = {
-  visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 0, x: -10 },
-};
-
-const showcaseVariants = {
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: 0 },
-};
-
 /* VARIABLES */
 // All project information
 const projects = [
@@ -93,7 +68,34 @@ export default function Projects() {
   const ref = useRef(null);
   const controls = useAnimation();
   const isInView = useInView(ref, { once: true });
+  const [changingSelected, setChangingSelected] = useState(false);
 
+  /* VARIANTS */
+  const parentVariants = {
+    visible: {
+      transition: {
+        staggerChildren: changingSelected ? 0.05 : 0.2,
+        delayChildren: changingSelected ? 0 : 2,
+      },
+    },
+  };
+
+  const rightVariants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 40 },
+  };
+
+  const leftVariants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -10 },
+  };
+
+  const showcaseVariants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 0 },
+  };
+
+  /* HOOKS */
   // Handle displaying a project
   const [showcase, setShowcase] = useState(projects[0]);
   const handleProjectShowcase = (id) => {
@@ -104,6 +106,7 @@ export default function Projects() {
   // Handle displaying a section
   const [selected, setSelected] = useState([0, 1, 2, 3, 4]);
   const handleSetSelected = (selection) => {
+    setChangingSelected(true);
     setSelected(selection);
   };
 
@@ -115,6 +118,11 @@ export default function Projects() {
       controls.start("hidden");
     }
   }, [isInView, controls]);
+
+  // Re-trigger animation when `selected` changes
+  useEffect(() => {
+    controls.start("visible");
+  }, [selected, controls]);
 
   return (
     <motion.div
@@ -131,7 +139,7 @@ export default function Projects() {
         <div id="project-buttons">
           <motion.button
             variants={rightVariants}
-            className="borders mulish "
+            className="borders mulish"
             onClick={() => handleSetSelected([0, 1, 2, 3, 4])}
           >
             Featured
@@ -167,8 +175,12 @@ export default function Projects() {
                 className="project"
                 onClick={() => handleProjectShowcase(id)}
               >
-                <h4 className="large-text">{projects[id].title}</h4>
-                <p className="tech-used">{projects[id].type}</p>
+                <div id="project-title-and-type">
+                  <h4 className="large-text" id="project-title">
+                    {projects[id].title}
+                  </h4>
+                  <p className="tech-used">{projects[id].type}</p>
+                </div>
                 {index < selected.length - 1 && (
                   <div className="separator"></div>
                 )}
