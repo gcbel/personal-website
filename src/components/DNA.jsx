@@ -6,15 +6,15 @@ import * as THREE from "three";
 const sequence = "ATGCGTTACCA";
 const bpSequence = "TACGCAATGGT";
 const colors = {
-  A: 0x80a9b1,
-  T: 0x75aa8c,
-  G: 0x81aeaa,
-  C: 0x6f8f6c,
-  backbone: 0x66709b, // Purple
+  A: 0x2d333f,
+  T: 0x2f4b4b,
+  G: 0x35504e,
+  C: 0x415f51,
+  backbone: 0x476374,
 };
 const numAtoms = {
-  base: 50,
-  backbone: 70,
+  base: 70,
+  backbone: 100,
 };
 
 /* Render DNA */
@@ -35,7 +35,7 @@ const DNA = () => {
     renderer.setClearColor(0x131313, 0); // Clear background
 
     // Set up cube geometry and initial coordinates
-    const geometry = new THREE.SphereGeometry(0.025, 8, 8);
+    const geometry = new THREE.SphereGeometry(0.03, 8, 8);
     let startY = -5;
 
     // Create double helix structure
@@ -45,10 +45,15 @@ const DNA = () => {
       const y = startY + i * 0.9;
       const z = Math.cos(angle) * 1.4;
 
+      const lastAngle = (i - 0.5) * 0.9;
+      const lastX = Math.sin(lastAngle) * 1.4;
+      const lastY = startY + (i - 0.5) * 0.9;
+      const lastZ = Math.cos(lastAngle) * 1.4;
+
       const nextAngle = (i + 0.5) * 0.9;
-      const nextX = -0.05 + Math.sin(nextAngle) * 1.4;
+      const nextX = Math.sin(nextAngle) * 1.4;
       const nextY = startY + (i + 0.5) * 0.9;
-      const nextZ = -0.05 + Math.cos(nextAngle) * 1.4;
+      const nextZ = Math.cos(nextAngle) * 1.4;
 
       // Set up nucleotide and base pair
       const nucleotide = sequence[i];
@@ -68,21 +73,15 @@ const DNA = () => {
         const molecule = new THREE.Mesh(geometry, material);
         const basepair = new THREE.Mesh(geometry, bpMaterial);
 
-        // console.log("j", j);
-        // console.log("x", x);
-        // console.log("z", z);
-
         molecule.position.set(
-          x - (Math.random() - 1) * 0.15 + x * (Math.random() - 1.8),
-          // x * (0.2 - (j + 1) / numAtoms["base"]),
-          y + (Math.random() - 0.5) * 0.3,
-          z - (Math.random() - 1) * 0.15 + z * (Math.random() - 1.8)
-          // z * ((j + 1) / numAtoms["base"] - 0.8)
+          -(x * (j + 1)) / numAtoms["base"] + (Math.random() - 0.5) * 0.6,
+          y + (Math.random() - 0.5) * 0.4,
+          -(z * (j + 1)) / numAtoms["base"] + (Math.random() - 0.5) * 0.6
         );
         basepair.position.set(
-          x - (Math.random() - 1) * 0.15 + x * (Math.random() - 1),
-          y + (Math.random() - 0.5) * 0.3,
-          z - (Math.random() - 1) * 0.15 + z * (Math.random() - 1)
+          (x * (j + 1)) / numAtoms["base"] + (Math.random() - 0.5) * 0.6,
+          y + (Math.random() - 0.5) * 0.4,
+          (z * (j + 1)) / numAtoms["base"] + (Math.random() - 0.5) * 0.6
         );
         molecule.userData.originalPosition = molecule.position.clone();
         basepair.userData.originalPosition = basepair.position.clone();
@@ -91,46 +90,29 @@ const DNA = () => {
       }
 
       // Create sugar-phosphate backbone
-      for (let j = 0; j < numAtoms["backbone"]; j += 2) {
+      for (let j = 0; j < numAtoms["backbone"]; j += 1) {
         const moleculeBackbone = new THREE.Mesh(geometry, backboneMaterial);
         const basepairBackbone = new THREE.Mesh(geometry, backboneMaterial);
-        const moleculeBackbone2 = new THREE.Mesh(geometry, backboneMaterial);
-        const basepairBackbone2 = new THREE.Mesh(geometry, backboneMaterial);
 
+        const ratio = (j + 1) / numAtoms["backbone"];
         moleculeBackbone.position.set(
-          x + (Math.random() - 0.5) * 0.5,
-          y + (Math.random() - 0.5) * 0.8,
-          z + (Math.random() - 0.5) * 0.5
-        );
-        moleculeBackbone2.position.set(
-          nextX + (Math.random() - 0.5) * 0.5,
-          nextY + (Math.random() - 0.5) * 0.8,
-          nextZ + (Math.random() - 0.5) * 0.5
+          lastX * ratio + nextX * (1 - ratio) + (Math.random() - 0.5) * 0.5,
+          lastY * ratio + nextY * (1 - ratio) + (Math.random() - 0.5) * 0.5,
+          lastZ * ratio + nextZ * (1 - ratio) + (Math.random() - 0.5) * 0.5
         );
 
         basepairBackbone.position.set(
-          -x + (Math.random() - 0.5) * 0.5,
-          y + (Math.random() - 0.5) * 0.8,
-          -z + (Math.random() - 0.5) * 0.5
-        );
-        basepairBackbone2.position.set(
-          -nextX + (Math.random() - 0.5) * 0.5,
-          nextY + (Math.random() - 0.5) * 0.8,
-          -nextZ + (Math.random() - 0.5) * 0.5
+          -lastX * ratio - nextX * (1 - ratio) + (Math.random() - 0.5) * 0.5,
+          lastY * ratio + nextY * (1 - ratio) + (Math.random() - 0.5) * 0.5,
+          -lastZ * ratio - nextZ * (1 - ratio) + (Math.random() - 0.5) * 0.5
         );
 
         moleculeBackbone.userData.originalPosition =
           moleculeBackbone.position.clone();
         basepairBackbone.userData.originalPosition =
           basepairBackbone.position.clone();
-        moleculeBackbone2.userData.originalPosition =
-          moleculeBackbone2.position.clone();
-        basepairBackbone2.userData.originalPosition =
-          basepairBackbone2.position.clone();
         groupRef.current.add(moleculeBackbone);
         groupRef.current.add(basepairBackbone);
-        groupRef.current.add(moleculeBackbone2);
-        groupRef.current.add(basepairBackbone2);
       }
     }
     scene.add(groupRef.current);

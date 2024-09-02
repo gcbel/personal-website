@@ -1,5 +1,6 @@
 /* EXPERIENCE PAGE */
 #experience-page {
+  margin-top: 120px;
   margin-bottom: 160px;
   color: var(--text-color);
   display: flex;

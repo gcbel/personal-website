@@ -58,8 +58,10 @@ const alt = [
 /* ABOUT PAGE */
 export default function About() {
   const ref = useRef(null);
+  const lowerRef = useRef(null);
   const controls = useAnimation();
   const isInView = useInView(ref, { once: true });
+  const lowerIsInView = useInView(lowerRef, { once: true });
 
   // Handle photo in profile section
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -76,6 +78,14 @@ export default function About() {
       controls.start("hidden");
     }
   }, [isInView, controls]);
+
+  useEffect(() => {
+    if (lowerIsInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [lowerIsInView, controls]);
 
   return (
     <motion.div
@@ -141,8 +151,17 @@ export default function About() {
           >{`${captions[photoIndex]}`}</p>
         </motion.div>
       </div>
-      <motion.div variants={bottomVariants} id="about-me-bottom">
-        <p>arrow</p>
+      <motion.div variants={bottomVariants} id="about-me-bottom" ref={lowerRef}>
+        <img
+          src="../../small-arrow.jpeg"
+          alt="Arrow pointing from text towards photo"
+          id="small-arrow"
+        ></img>
+        <img
+          src="../../large-arrow.jpeg"
+          alt="Arrow pointing from text towards photo"
+          id="large-arrow"
+        ></img>
         <img
           src="../../baby-gabby.jpeg"
           alt="Young Gabby playing a video game on an old computer"
