@@ -23,7 +23,7 @@ export default function Main() {
       } else if (scrollTop < fadeTop) {
         setOpacity(0.9);
       } else {
-        const opacity = 0.9 + (fadeTop - scrollTop) * 0.002;
+        const opacity = 0.9 + (fadeTop - scrollTop) * 0.001;
         setOpacity(Math.max(opacity, 0));
       }
     };
