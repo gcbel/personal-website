@@ -25,7 +25,7 @@ export default function Message({ onDismiss }) {
       setShowAlert(true);
     } else {
       setShowAlert(false);
-      const link = `mailto:gcrbelanger@gmail.com?subject=Message from ${name}&body=${message} (From: ${email})`;
+      const link = `mailto:hello@gabriellecbelanger.com?subject=Message from ${name}&body=${message} (From: ${email})`;
       window.location.href = link;
     }
   };

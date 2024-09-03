@@ -151,7 +151,7 @@ export default function Contact() {
             </button>
           </motion.div>
           <motion.div className="mulish" id="contact">
-            <a href="mailto:gcrbelanger@gmail.com">Email</a>
+            <a href="mailto:hello@gabriellecbelanger.com">Email</a>
             <a href="https://www.linkedin.com/in/gcbelanger/" target="_blank">
               Linkedin
             </a>
