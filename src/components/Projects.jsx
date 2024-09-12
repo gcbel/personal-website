@@ -24,12 +24,13 @@ const projects = [
   {
     id: 1,
     title: "Aptitude",
-    image: "vector-space.png",
+    image: "aptitude.png",
     description:
-      "Skill acquisition and learning platform built for users to track and quantify their goals for learning.",
+      "Productivity platform built for users to track and reach their goals.",
     type: "Fullstack",
-    tech: "React",
+    tech: "React, Vite, Tailwind, MongoDB, GraphQL, and JWT",
     github: "https://github.com/gcbel/aptitude",
+    site: "https://withaptitude.com/",
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ const projects = [
     type: "Fullstack",
     tech: "React",
     github: "https://github.com/gcbel/greentrail",
+    site: "https://travelgreentrail.com/",
   },
   {
     id: 3,
