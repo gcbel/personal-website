@@ -41,7 +41,6 @@ const projects = [
     type: "Fullstack",
     tech: "React",
     github: "https://github.com/gcbel/greentrail",
-    site: "https://travelgreentrail.com/",
   },
   {
     id: 3,
@@ -56,7 +55,7 @@ const projects = [
   {
     id: 4,
     title: "Content Moderator",
-    image: "vector-space.png",
+    image: "discord-bot.png",
     description:
       "Automated moderator bot built to detect and target romance scams, uses Discord as a proxy.",
     type: "ML, AI",
@@ -66,7 +65,7 @@ const projects = [
   {
     id: 5,
     title: "Personal Website",
-    image: "vector-space.png",
+    image: "personal-website.png",
     description: "This site!",
     type: "Fullstack",
     tech: "React, Vite, Framer Motion, Vanilla CSS",
@@ -116,7 +115,7 @@ export default function Projects() {
   };
 
   // Handle displaying a section
-  const [selected, setSelected] = useState([0, 1, 2, 3, 4]);
+  const [selected, setSelected] = useState([5, 4, 1, 2, 3]);
   const handleSetSelected = (selection) => {
     setChangingSelected(true);
     setSelected(selection);
@@ -152,14 +151,14 @@ export default function Projects() {
           <motion.button
             variants={rightVariants}
             className="borders mulish"
-            onClick={() => handleSetSelected([0, 1, 2, 3, 4])}
+            onClick={() => handleSetSelected([5, 4, 1, 2, 3])}
           >
             Featured
           </motion.button>
           <motion.button
             variants={rightVariants}
             className="borders mulish"
-            onClick={() => handleSetSelected([5, 0, 1, 2])}
+            onClick={() => handleSetSelected([5, 1, 2])}
           >
             Full Stack
           </motion.button>
