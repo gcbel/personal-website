@@ -2,7 +2,7 @@
 
 ## Description
 
-Visit my site [here](https://gabriellecbelanger.com/)!
+Visit my site at https://gabriellecbelanger.com/.
 
 My personal website, featuring content about me, my background, projects I've worked on, and information on how to contact me.
 
